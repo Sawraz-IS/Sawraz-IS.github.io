@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shehabul Islam Sawraz | Software Engineer &amp; Researcher</title>
+  <meta name="description" content="Personal portfolio of Shehabul Islam Sawraz — Software Engineer at Iron Software, CSE Graduate from BUET, security researcher and aspiring PhD candidate.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shehabul Islam Sawraz | Software Engineer &amp; Researcher">
+  <meta property="og:description" content="Personal portfolio of Shehabul Islam Sawraz — Software Engineer at Iron Software, CSE Graduate from BUET, security researcher and aspiring PhD candidate.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sawraz-is.github.io/og-image.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">Sawraz</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-overlay"></div>
+  <div class="nav-drawer">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          Currently at Iron Software
+        </div>
+        <h1>Hi, I'm <span class="name-highlight">Shehabul Islam Sawraz</span></h1>
+        <div class="typewriter-wrapper">
+          <span id="typewriter" class="typewriter-text"></span>
+        </div>
+        <p class="hero-tagline">CSE Graduate from BUET &middot; Performant Systems &middot; Security Research &middot; Open to Opportunities</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View My Work</a>
+          <a href="#" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Download CV</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/Shehabul-Islam-Sawraz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/shehabul-islam-sawraz-ba03542ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:shehabulislamsawraz@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid fade-up">
+        <div class="about-avatar">SIS</div>
+        <div class="about-text">
+          <p>I'm a Computer Science and Engineering graduate from Bangladesh University of Engineering and Technology (BUET), currently working as a Software Engineer at Iron Software. My interests span systems programming, software security, reverse engineering, cryptography, and full-stack web development. I'm passionate about writing high-performance, reliable software and am actively pursuing research opportunities for graduate studies.</p>
+          <div class="about-chip">&#127891; Targeting PhD programs in Computer Science &mdash; Systems Security &amp; Energy-Efficient Computing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="edu-cards">
+        <div class="edu-card fade-up">
+          <div class="edu-card-header">
+            <h3>Bangladesh University of Engineering and Technology (BUET)</h3>
+            <span class="edu-date">April 2019 &ndash; July 2024</span>
+          </div>
+          <p class="edu-degree">B.Sc in Computer Science and Engineering</p>
+          <span class="edu-grade">CGPA: 3.68 / 4.00</span>
+          <p class="edu-coursework"><strong>Relevant Coursework:</strong> Object-Oriented Programming, Data Structures &amp; Algorithms, Embedded Systems, Discrete Math, Linear Algebra, Calculus, Physics, Probability &amp; Statistics</p>
+          <span class="edu-achievement"><i class="fa-solid fa-award"></i> Dean's Honor List (3x)</span>
+        </div>
+        <div class="edu-card fade-up">
+          <div class="edu-card-header">
+            <h3>Dhaka College</h3>
+            <span class="edu-date">2016 &ndash; 2018</span>
+          </div>
+          <p class="edu-degree">Higher Secondary Certificate (H.S.C)</p>
+          <span class="edu-grade">GPA: 5.00 / 5.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More sections will be added incrementally -->
+
+  <!-- ============ FOOTER (placeholder) ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://github.com/Shehabul-Islam-Sawraz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/shehabul-islam-sawraz-ba03542ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:shehabulislamsawraz@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="footer-text">Designed &amp; Built by Shehabul Islam Sawraz &middot; 2025</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Confetti Canvas (Easter Egg) -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
