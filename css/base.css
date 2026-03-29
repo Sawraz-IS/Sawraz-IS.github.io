@@ -1,0 +1,222 @@
+/* ============================================
+   BASE — Reset, Variables, Typography
+   ============================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  /* Light Theme (default) */
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1A2E;
+  --text-secondary: #4A4A6A;
+  --text-muted: #6B7280;
+  --accent: #4F46E5;
+  --accent-light: #6366F1;
+  --accent-cyan: #06B6D4;
+  --accent-gradient: linear-gradient(135deg, #4F46E5, #06B6D4);
+  --border: #E5E7EB;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+  --navbar-bg: rgba(255,255,255,0.8);
+  --navbar-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  --pill-bg: #EEF2FF;
+  --pill-text: #4F46E5;
+  --input-bg: #F9FAFB;
+  --timeline-line: #E5E7EB;
+  --hero-dot: rgba(79,70,229,0.08);
+  --scrollbar-track: #F3F4F6;
+  --scrollbar-thumb: #D1D5DB;
+  --footer-bg: #F3F4F6;
+  --modal-overlay: rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0F0F0F;
+  --bg-secondary: #161625;
+  --bg-card: #1A1A2E;
+  --text-primary: #F1F1F1;
+  --text-secondary: #A0A0C0;
+  --text-muted: #7A7A9A;
+  --accent: #6366F1;
+  --accent-light: #818CF8;
+  --accent-cyan: #22D3EE;
+  --accent-gradient: linear-gradient(135deg, #6366F1, #22D3EE);
+  --border: #2A2A40;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.4);
+  --navbar-bg: rgba(15,15,15,0.85);
+  --navbar-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --pill-bg: rgba(99,102,241,0.15);
+  --pill-text: #818CF8;
+  --input-bg: #1A1A2E;
+  --timeline-line: #2A2A40;
+  --hero-dot: rgba(99,102,241,0.07);
+  --scrollbar-track: #1A1A2E;
+  --scrollbar-thumb: #3A3A50;
+  --footer-bg: #0A0A0A;
+  --modal-overlay: rgba(0,0,0,0.7);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover { color: var(--accent-light); }
+
+img { max-width: 100%; display: block; }
+
+ul { list-style: none; }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+
+/* ---------- Utilities ---------- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-left: 18px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--accent-gradient);
+  animation: accentBarGrow 0.6s ease forwards;
+  transform-origin: top;
+}
+
+@keyframes accentBarGrow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* ---------- Scroll Progress Bar ---------- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  z-index: 10000;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ---------- Fade-up Animation ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--accent-gradient);
+  color: #FFF;
+  box-shadow: 0 4px 15px rgba(79,70,229,0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(79,70,229,0.4);
+  color: #FFF;
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- Tech Chips (shared) ---------- */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-chip {
+  padding: 4px 12px;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}

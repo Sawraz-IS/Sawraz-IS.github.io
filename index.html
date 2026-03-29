@@ -20,8 +20,11 @@
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -239,24 +242,39 @@
         <h2 class="section-title">Work Experience</h2>
       </div>
       <div class="timeline">
+
         <!-- Iron Software -->
         <div class="timeline-item fade-up">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-card-header">
               <h3><a href="https://ironsoftware.com/" target="_blank" rel="noopener noreferrer">Iron Software</a></h3>
-              <span class="timeline-role">Software Engineer</span>
             </div>
-            <p class="timeline-date">May 2025 &ndash; Present</p>
-            <ul>
-              <li>Spearheaded in-memory multi-page TIFF conversion achieving 3.4x faster PDF processing and 95% lower memory usage, enabling scalable cloud and serverless deployments</li>
-              <li>Built in-house PPTX-to-image conversion pipeline, reducing processing time by 40% and boosting rendering reliability by over 90%</li>
-              <li>Redesigned HTML header/footer rendering with batch processing and warm tab reuse, delivering 1.4x&ndash;5.5x faster rendering and 5&ndash;15% lower memory usage on large PDFs</li>
-              <li>Engineered full PDF/UA accessibility compliance for HTML-to-PDF rendering &mdash; fixing annotation ordering, cross-page MCID assignment, and ParentTree integrity &mdash; achieving 100% PAC and VeraPDF pass rate with 5&ndash;10x faster tag tree processing</li>
-              <li>Implemented a robust PDF digital signature verification pipeline with certificate trust chain validation, revocation status checking, weak algorithm detection, byte-range integrity verification, and incremental tampering detection for multi-signature documents</li>
-              <li>Compiled ZXing C++ barcode engine into WebAssembly and integrated with Blazor WebAssembly, enabling barcode encode/decode in browser-based and serverless environments</li>
-              <li>Extended OCR passport reading with full MRZ field parsing and best-effort Visual Inspection Zone (VIZ) extraction including gender and date-of-issue fields</li>
-            </ul>
+
+            <!-- L2 Promotion -->
+            <div>
+              <span class="timeline-role">Software Engineer L2</span>
+              <p class="timeline-date">Feb 2026 &ndash; Present</p>
+              <ul>
+                <li>Leading the product legacy initiative, serving as the primary liaison between engineering and the customer support team to triage critical issues, prioritize high-impact fixes, and drive rapid resolution cycles &mdash; consistently delivering production patches within tight SLAs</li>
+                <li>Redesigned HTML header/footer rendering with batch processing and warm tab reuse, delivering 1.4x&ndash;5.5x faster rendering and 5&ndash;15% lower memory usage on large PDFs</li>
+                <li>Compiled ZXing C++ barcode engine into WebAssembly and integrated with Blazor WebAssembly, enabling barcode encode/decode in browser-based and serverless environments</li>
+              </ul>
+            </div>
+
+            <!-- Original role -->
+            <div class="timeline-promotion">
+              <span class="timeline-role">Software Engineer</span>
+              <p class="timeline-date">May 2025 &ndash; Jan 2026</p>
+              <ul>
+                <li>Spearheaded in-memory multi-page TIFF conversion achieving 3.4x faster PDF processing and 95% lower memory usage, enabling scalable cloud and serverless deployments</li>
+                <li>Built in-house PPTX-to-image conversion pipeline, reducing processing time by 40% and boosting rendering reliability by over 90%</li>
+                <li>Engineered full PDF/UA accessibility compliance for HTML-to-PDF rendering &mdash; fixing annotation ordering, cross-page MCID assignment, and ParentTree integrity &mdash; achieving 100% PAC and VeraPDF pass rate with 5&ndash;10x faster tag tree processing</li>
+                <li>Implemented a robust PDF digital signature verification pipeline with certificate trust chain validation, revocation status checking, weak algorithm detection, byte-range integrity verification, and incremental tampering detection for multi-signature documents</li>
+                <li>Extended OCR passport reading with full MRZ field parsing and best-effort Visual Inspection Zone (VIZ) extraction including gender and date-of-issue fields</li>
+              </ul>
+            </div>
+
             <div class="tech-stack">
               <span class="tech-chip">C#</span>
               <span class="tech-chip">.NET</span>
@@ -322,6 +340,7 @@
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -335,51 +354,51 @@
       <div class="projects-grid">
 
         <!-- Meetify -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"Meetify – A Virtual Meeting Hub","year":"2025","desc":"A production-grade video conferencing platform built with Next.js 14 and TypeScript. Supports real-time meetings with screen sharing, session recording, participant controls (mute, grid layout, emoji reactions), and role-based secure authentication via Clerk. Features personalized rooms with unique shareable links, future meeting scheduling, recorded session playback, and a fully responsive cross-device UI — all powered by GetStream\u0027s real-time infrastructure.","tech":["Next.js","TypeScript","Clerk","GetStream","Tailwind CSS","ShadCN"],"github":"https://github.com/Shehabul-Islam-Sawraz/Meetify"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/Shehabul-Islam-Sawraz/Meetify" target="_blank" rel="noopener noreferrer">Meetify</a></h3>
             <span class="project-year">2025</span>
           </div>
-          <p class="project-desc">A production-grade video conferencing platform with real-time meetings, screen sharing, session recording, participant controls, role-based auth via Clerk, personalized rooms with shareable links, and future meeting scheduling &mdash; all powered by GetStream.</p>
+          <p class="project-desc">A production-grade video conferencing platform with real-time meetings, screen sharing, session recording, participant controls, and role-based auth via Clerk.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Next.js</span>
               <span class="tech-chip">TypeScript</span>
               <span class="tech-chip">Clerk</span>
               <span class="tech-chip">GetStream</span>
-              <span class="tech-chip">Tailwind CSS</span>
-              <span class="tech-chip">ShadCN</span>
             </div>
-            <a href="https://github.com/Shehabul-Islam-Sawraz/Meetify" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Meetify on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/Meetify" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- ChaatNChat -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"ChaatNChat","year":"2024","desc":"A full-stack real-time chat application enabling seamless private and group communication. Built on a Node.js/Express backend with Socket.IO for low-latency bidirectional messaging. Implements JWT-based authentication, Sequelize ORM with PostgreSQL for structured data, Redis for session caching, and Cloudinary for scalable media storage. Redux Toolkit ensures a performant, smooth frontend experience with optimistic UI updates.","tech":["Express.js","React","Socket.IO","PostgreSQL","Redux Toolkit","Sequelize","Redis","Multer","Cloudinary"],"github":"https://github.com/Shehabul-Islam-Sawraz/ChaatNChat"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/Shehabul-Islam-Sawraz/ChaatNChat" target="_blank" rel="noopener noreferrer">ChaatNChat</a></h3>
             <span class="project-year">2024</span>
           </div>
-          <p class="project-desc">Full-stack real-time chat app with Socket.IO for low-latency messaging, JWT auth, PostgreSQL via Sequelize, Redis session caching, Cloudinary media storage, and Redux Toolkit for optimistic UI updates.</p>
+          <p class="project-desc">Full-stack real-time chat app with Socket.IO for low-latency messaging, JWT auth, PostgreSQL, Redis caching, and Redux Toolkit.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Express.js</span>
               <span class="tech-chip">React</span>
               <span class="tech-chip">Socket.IO</span>
               <span class="tech-chip">PostgreSQL</span>
-              <span class="tech-chip">Redis</span>
             </div>
-            <a href="https://github.com/Shehabul-Islam-Sawraz/ChaatNChat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View ChaatNChat on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/ChaatNChat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- PicPred -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"PicPred","year":"2024","desc":"An AI-powered image classification web app bridging a Django REST Framework backend with a React frontend. Leverages a Keras InceptionResNetV2 deep learning model for high-accuracy multi-class image prediction. Features a drag-and-drop image upload interface with loading spinners, instant prediction display, and a clean RESTful API architecture separating ML inference from the UI layer.","tech":["Django","React","TensorFlow","Keras","InceptionResNetV2","SQLite"],"github":"https://github.com/Shehabul-Islam-Sawraz/PicPred"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/Shehabul-Islam-Sawraz/PicPred" target="_blank" rel="noopener noreferrer">PicPred</a></h3>
             <span class="project-year">2024</span>
           </div>
-          <p class="project-desc">AI-powered image classification web app using Django REST + React frontend. Leverages Keras InceptionResNetV2 for high-accuracy multi-class prediction with drag-and-drop upload and clean RESTful API architecture.</p>
+          <p class="project-desc">AI-powered image classification using Django REST + React with Keras InceptionResNetV2 for high-accuracy multi-class prediction.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Django</span>
@@ -387,53 +406,54 @@
               <span class="tech-chip">TensorFlow</span>
               <span class="tech-chip">Keras</span>
             </div>
-            <a href="https://github.com/Shehabul-Islam-Sawraz/PicPred" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PicPred on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/PicPred" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- Music Instruments Classification -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"Music Instruments Classification","year":"2024","desc":"A deep learning pipeline for classifying musical instruments across 20 categories from raw audio recordings. Processes audio signals into Mel Spectrograms using Librosa, then feeds them into a custom ResNet-18-inspired architecture augmented with fully connected and activation layers. Rigorously trained and evaluated, achieving high classification accuracy — demonstrating the power of computer vision techniques applied to audio domains.","tech":["Python","Librosa","TensorFlow","Keras","ResNet-18","NumPy","Jupyter Notebook"],"github":"https://github.com/ehsankader16/CSE-472-ML_Project"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/ehsankader16/CSE-472-ML_Project" target="_blank" rel="noopener noreferrer">Music Instruments Classification</a></h3>
             <span class="project-year">2024</span>
           </div>
-          <p class="project-desc">Deep learning pipeline classifying 20 musical instrument categories from raw audio. Processes signals into Mel Spectrograms via Librosa, fed into a custom ResNet-18-inspired architecture for high accuracy.</p>
+          <p class="project-desc">Deep learning pipeline classifying 20 instrument categories from raw audio via Mel Spectrograms and a custom ResNet-18 architecture.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Python</span>
               <span class="tech-chip">TensorFlow</span>
               <span class="tech-chip">Librosa</span>
-              <span class="tech-chip">ResNet-18</span>
             </div>
-            <a href="https://github.com/ehsankader16/CSE-472-ML_Project" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View project on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/ehsankader16/CSE-472-ML_Project" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- ParkedCar -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"ParkedCar – Car Parking Rental Service","year":"2023","desc":"A collaborative mobile application that turns idle apartment parking spaces into a rental marketplace. Car owners can list their spots for hourly, daily, or monthly rental with flexible pricing. Built with an Express.js REST API, Sequelize ORM backed by PostgreSQL for transactional data integrity, and a clean HTML/CSS3 interface. Git-based team workflow ensured smooth parallel development across the team.","tech":["Java","Sequelize","Express.js","HTML","CSS3","PostgreSQL"],"github":"https://github.com/orgs/ParkedCar-Dev/repositories"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/orgs/ParkedCar-Dev/repositories" target="_blank" rel="noopener noreferrer">ParkedCar</a></h3>
             <span class="project-year">2023</span>
           </div>
-          <p class="project-desc">Mobile app turning idle apartment parking spaces into a rental marketplace. Car owners list spots for hourly/daily/monthly rental with flexible pricing, backed by Express.js REST API and PostgreSQL.</p>
+          <p class="project-desc">Mobile app turning idle apartment parking spaces into a rental marketplace with flexible hourly/daily/monthly pricing.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Java</span>
               <span class="tech-chip">Express.js</span>
-              <span class="tech-chip">Sequelize</span>
               <span class="tech-chip">PostgreSQL</span>
             </div>
-            <a href="https://github.com/orgs/ParkedCar-Dev/repositories" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View ParkedCar on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/orgs/ParkedCar-Dev/repositories" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- YACC -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"YACC – Yet Another Compiler Compiler","year":"2022","desc":"A fully functional compiler built from scratch, covering every phase of the compilation pipeline. Implements a symbol table manager, a lexical analyzer with Flex, a semantic analyzer with Bison for grammar parsing and type checking, and a final x86 assembly code generator. A deep dive into how languages are translated to machine code — one of the most technically rigorous academic projects in the CSE curriculum.","tech":["C","Flex","Bison","x86 Assembly"],"github":"https://github.com/Shehabul-Islam-Sawraz/CSE_310_Compiler_Sessional"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/Shehabul-Islam-Sawraz/CSE_310_Compiler_Sessional" target="_blank" rel="noopener noreferrer">YACC &ndash; Compiler Compiler</a></h3>
             <span class="project-year">2022</span>
           </div>
-          <p class="project-desc">Fully functional compiler from scratch covering every phase: symbol table manager, Flex lexical analyzer, Bison semantic analyzer for grammar parsing and type checking, and x86 assembly code generator.</p>
+          <p class="project-desc">Fully functional compiler from scratch: symbol table, Flex lexer, Bison parser with type checking, and x86 code generator.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">C</span>
@@ -441,93 +461,95 @@
               <span class="tech-chip">Bison</span>
               <span class="tech-chip">x86 Assembly</span>
             </div>
-            <a href="https://github.com/Shehabul-Islam-Sawraz/CSE_310_Compiler_Sessional" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View YACC on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/CSE_310_Compiler_Sessional" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- YAPG -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"YAPG – Yet Another Pong Game","year":"2022","desc":"A hardware-level Pong game running entirely on an ATMega32 microcontroller — no OS, no framework. Players control paddles using Ultrasonic Sonar distance sensing, replacing conventional buttons for an immersive physical interaction. Haptic feedback via Vibration Motor, audio cues via Buzzer, and real-time game state rendered on an LED Matrix and LCD Display, all driven by hand-written embedded C.","tech":["ATMega32","Ultrasonic Sonar","Vibration Motor","Buzzer","LED Matrix","LCD Display","Embedded C"],"github":"https://github.com/Shehabul-Islam-Sawraz/YAPG-Yet_Another_Pong_Game"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/Shehabul-Islam-Sawraz/YAPG-Yet_Another_Pong_Game" target="_blank" rel="noopener noreferrer">YAPG &ndash; Pong Game</a></h3>
             <span class="project-year">2022</span>
           </div>
-          <p class="project-desc">Hardware-level Pong on ATMega32 microcontroller &mdash; no OS. Ultrasonic Sonar paddle control, haptic feedback via vibration motor, audio cues, and real-time rendering on LED Matrix and LCD Display.</p>
+          <p class="project-desc">Hardware-level Pong on ATMega32 &mdash; no OS. Ultrasonic Sonar paddle control, haptic feedback, and real-time LED Matrix rendering.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">ATMega32</span>
               <span class="tech-chip">Embedded C</span>
-              <span class="tech-chip">Ultrasonic Sonar</span>
             </div>
-            <a href="https://github.com/Shehabul-Islam-Sawraz/YAPG-Yet_Another_Pong_Game" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View YAPG on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/YAPG-Yet_Another_Pong_Game" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- Chess -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"Chess","year":"2021","desc":"A feature-complete chess game developed for the Intra BUET GameJam 2021. Implements full chess rules including special moves, check/checkmate detection, and advanced game strategies like Sodium Attack. Built with a responsive JavaFX GUI for smooth visual interaction and careful asynchronous task management to keep gameplay fluid under complex move calculations. Awarded as a standout GameJam submission.","tech":["Java","JavaFX GUI"],"github":"https://github.com/ezmata-101/Chess"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/ezmata-101/Chess" target="_blank" rel="noopener noreferrer">Chess</a></h3>
             <span class="project-year">2021</span>
           </div>
-          <p class="project-desc">Feature-complete chess game for Intra BUET GameJam 2021. Full rules with special moves, check/checkmate detection, Sodium Attack strategy, responsive JavaFX GUI, and async task management.</p>
+          <p class="project-desc">Feature-complete chess game for BUET GameJam 2021 with full rules, checkmate detection, and async JavaFX GUI.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Java</span>
               <span class="tech-chip">JavaFX</span>
             </div>
-            <a href="https://github.com/ezmata-101/Chess" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Chess on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/ezmata-101/Chess" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- eM-Client -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"eM-Client","year":"2021","desc":"A desktop email client built entirely in Java, supporting sending and receiving emails with a clean JavaFX interface. Uses Java Networking to handle concurrent email sessions simultaneously — allowing users to manage multiple inboxes in parallel without UI freezes. A strong exercise in multi-threading, socket programming, and building polished desktop applications from scratch.","tech":["Java","JavaFX GUI","Java Networking"],"github":"https://github.com/Shehabul-Islam-Sawraz/eM-Client"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/Shehabul-Islam-Sawraz/eM-Client" target="_blank" rel="noopener noreferrer">eM-Client</a></h3>
             <span class="project-year">2021</span>
           </div>
-          <p class="project-desc">Desktop email client in Java supporting send/receive with clean JavaFX interface. Java Networking handles concurrent sessions for multiple inboxes in parallel without UI freezes.</p>
+          <p class="project-desc">Desktop email client in Java with concurrent session handling via Java Networking and clean JavaFX interface.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Java</span>
               <span class="tech-chip">JavaFX</span>
-              <span class="tech-chip">Java Networking</span>
+              <span class="tech-chip">Networking</span>
             </div>
-            <a href="https://github.com/Shehabul-Islam-Sawraz/eM-Client" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View eM-Client on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/eM-Client" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- Hello Doctor -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"Hello Doctor","year":"2021","desc":"An Android application bridging the communication gap between doctors and patients. Enables appointment scheduling, real-time messaging, and patient health monitoring within a single mobile interface. Backed by Firebase Storage for reliable cloud data persistence and built with Maven dependency management in Android Studio. Demonstrates practical integration of cloud APIs with mobile-first UX design.","tech":["Java","Maven","Android Studio","Firebase Storage","Git"],"github":"https://github.com/Shehabul-Islam-Sawraz/HelloDoctor"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/Shehabul-Islam-Sawraz/HelloDoctor" target="_blank" rel="noopener noreferrer">Hello Doctor</a></h3>
             <span class="project-year">2021</span>
           </div>
-          <p class="project-desc">Android app bridging doctor-patient communication. Appointment scheduling, real-time messaging, and health monitoring backed by Firebase Storage with Maven dependency management.</p>
+          <p class="project-desc">Android app bridging doctor-patient communication with scheduling, messaging, and Firebase-backed health monitoring.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Java</span>
               <span class="tech-chip">Android</span>
               <span class="tech-chip">Firebase</span>
-              <span class="tech-chip">Maven</span>
             </div>
-            <a href="https://github.com/Shehabul-Islam-Sawraz/HelloDoctor" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Hello Doctor on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/HelloDoctor" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
         <!-- RentaStay -->
-        <div class="project-card fade-up">
+        <div class="project-card fade-up" data-project='{"name":"RentaStay","year":"2021","desc":"A full-featured Django web platform for room rental listings — users can browse available rooms by location or list their own properties. Integrates an Oracle database for robust relational data management. Built with a polished Bootstrap + jQuery frontend for a smooth browsing experience. Earned Honorable Mention as a standout Undergraduate Database Term Project for its clean architecture and real-world utility.","tech":["Python","Django","Oracle","HTML5","CSS3","Bootstrap","JavaScript","jQuery"],"github":"https://github.com/fardinanam/RentaStay"}'>
           <div class="project-card-header">
             <h3><a href="https://github.com/fardinanam/RentaStay" target="_blank" rel="noopener noreferrer">RentaStay</a></h3>
             <span class="project-year">2021</span>
           </div>
-          <p class="project-desc">Full-featured Django room rental platform &mdash; browse by location or list properties. Oracle database for robust relational data, Bootstrap + jQuery frontend. Honorable Mention as standout DB term project.</p>
+          <p class="project-desc">Django room rental platform with Oracle DB, Bootstrap frontend. Honorable Mention as standout DB term project.</p>
+          <span class="view-details">View details <i class="fa-solid fa-arrow-right"></i></span>
           <div class="project-footer">
             <div class="project-tech">
               <span class="tech-chip">Django</span>
               <span class="tech-chip">Oracle</span>
               <span class="tech-chip">Bootstrap</span>
-              <span class="tech-chip">jQuery</span>
             </div>
-            <a href="https://github.com/fardinanam/RentaStay" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View RentaStay on GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/fardinanam/RentaStay" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
@@ -542,7 +564,6 @@
         <h2 class="section-title">Research &amp; Publications</h2>
       </div>
       <div class="research-cards">
-        <!-- Publication -->
         <div class="research-card fade-up">
           <span class="research-type">Publication</span>
           <h3>Zero-shot Prompting for Code Complexity Prediction Using GitHub Copilot</h3>
@@ -550,8 +571,6 @@
           <p class="research-authors">Joanna Cecilia da Silva Santos, Mohammed Latif Siddiq, Abdus Samee, Sk Ruhul Azgor, Md. Asif Haider, <span class="me">Shehabul Islam Sawraz</span></p>
           <a href="https://doi.org/10.1109/NLBSE59153.2023.00018" target="_blank" rel="noopener noreferrer" class="btn-paper">View Paper <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-
-        <!-- Thesis -->
         <div class="research-card fade-up">
           <span class="research-type">Undergraduate Thesis</span>
           <h3>Adaptive Duty Cycling Leveraging Heterogeneous Sleep Modes for Modbus-Based Wired IoT Systems</h3>
@@ -595,7 +614,7 @@
             </li>
             <li>
               <span class="affil-icon">&#127941;</span>
-              <div><span class="affil-year">2023:</span> Organizer &amp; Problem Setter, Inter University Capture the Flag &mdash; BUET CSE FEST 2023</div>
+              <div><span class="affil-year">2023:</span> Organizer &amp; Problem Setter, Inter University CTF &mdash; BUET CSE FEST 2023</div>
             </li>
             <li>
               <span class="affil-icon">&#129351;</span>
@@ -659,6 +678,22 @@
     </div>
   </section>
 
+  <!-- ============ PROJECT DETAIL MODAL ============ -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3></h3>
+        <span class="modal-year"></span>
+      </div>
+      <p class="modal-desc"></p>
+      <div class="modal-tech"></div>
+      <div class="modal-links">
+        <a href="#" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View on GitHub</a>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
@@ -671,13 +706,16 @@
     </div>
   </footer>
 
-  <!-- Back to Top -->
   <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-
-  <!-- Confetti Canvas (Easter Egg) -->
   <canvas id="confetti-canvas"></canvas>
 
-  <!-- Script -->
-  <script src="script.js"></script>
+  <!-- Modular Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/confetti.js"></script>
 </body>
 </html>
