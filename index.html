@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shehabul Islam Sawraz | Software Engineer &amp; Researcher</title>
+  <meta name="description" content="Personal portfolio of Shehabul Islam Sawraz — Software Engineer at Iron Software, CSE Graduate from BUET, security researcher and aspiring PhD candidate.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shehabul Islam Sawraz | Software Engineer &amp; Researcher">
+  <meta property="og:description" content="Personal portfolio of Shehabul Islam Sawraz — Software Engineer at Iron Software, CSE Graduate from BUET, security researcher and aspiring PhD candidate.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sawraz-is.github.io/og-image.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">Sawraz</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-overlay"></div>
+  <div class="nav-drawer">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          Currently at Iron Software
+        </div>
+        <h1>Hi, I'm <span class="name-highlight">Shehabul Islam Sawraz</span></h1>
+        <div class="typewriter-wrapper">
+          <span id="typewriter" class="typewriter-text"></span>
+        </div>
+        <p class="hero-tagline">CSE Graduate from BUET &middot; Performant Systems &middot; Security Research &middot; Open to Opportunities</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View My Work</a>
+          <a href="#" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Download CV</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/Shehabul-Islam-Sawraz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/shehabul-islam-sawraz-ba03542ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:shehabulislamsawraz@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid fade-up">
+        <div class="about-avatar">SIS</div>
+        <div class="about-text">
+          <p>I'm a Computer Science and Engineering graduate from Bangladesh University of Engineering and Technology (BUET), currently working as a Software Engineer at Iron Software. My interests span systems programming, software security, reverse engineering, cryptography, and full-stack web development. I'm passionate about writing high-performance, reliable software and am actively pursuing research opportunities for graduate studies.</p>
+          <div class="about-chip">&#127891; Targeting PhD programs in Computer Science &mdash; Systems Security &amp; Energy-Efficient Computing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="edu-cards">
+        <div class="edu-card fade-up">
+          <div class="edu-card-header">
+            <h3>Bangladesh University of Engineering and Technology (BUET)</h3>
+            <span class="edu-date">April 2019 &ndash; July 2024</span>
+          </div>
+          <p class="edu-degree">B.Sc in Computer Science and Engineering</p>
+          <span class="edu-grade">CGPA: 3.68 / 4.00</span>
+          <p class="edu-coursework"><strong>Relevant Coursework:</strong> Object-Oriented Programming, Data Structures &amp; Algorithms, Embedded Systems, Discrete Math, Linear Algebra, Calculus, Physics, Probability &amp; Statistics</p>
+          <span class="edu-achievement"><i class="fa-solid fa-award"></i> Dean's Honor List (3x)</span>
+        </div>
+        <div class="edu-card fade-up">
+          <div class="edu-card-header">
+            <h3>Dhaka College</h3>
+            <span class="edu-date">2016 &ndash; 2018</span>
+          </div>
+          <p class="edu-degree">Higher Secondary Certificate (H.S.C)</p>
+          <span class="edu-grade">GPA: 5.00 / 5.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Technical Arsenal</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category fade-up" data-cat="languages">
+          <h3>Languages</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">C</span>
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">TypeScript</span>
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">x86 Assembly</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">Bash</span>
+            <span class="skill-pill">LaTeX</span>
+          </div>
+        </div>
+        <div class="skill-category fade-up" data-cat="frameworks">
+          <h3>Frameworks &amp; Libraries</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">.NET</span>
+            <span class="skill-pill">Next.js</span>
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">Express.js</span>
+            <span class="skill-pill">Django</span>
+            <span class="skill-pill">Redux</span>
+            <span class="skill-pill">Tailwind CSS</span>
+            <span class="skill-pill">Framer Motion</span>
+            <span class="skill-pill">OpenGL</span>
+            <span class="skill-pill">Unity</span>
+          </div>
+        </div>
+        <div class="skill-category fade-up" data-cat="databases">
+          <h3>ORMs &amp; Databases</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">Oracle</span>
+            <span class="skill-pill">MongoDB</span>
+            <span class="skill-pill">Redis</span>
+            <span class="skill-pill">Prisma ORM</span>
+            <span class="skill-pill">Sequelize ORM</span>
+          </div>
+        </div>
+        <div class="skill-category fade-up" data-cat="cloud">
+          <h3>Cloud &amp; DevOps</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Azure Cloud</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">WASM</span>
+            <span class="skill-pill">Git</span>
+          </div>
+        </div>
+        <div class="skill-category fade-up" data-cat="security">
+          <h3>Security &amp; Tools</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Wazuh</span>
+            <span class="skill-pill">Wireshark</span>
+            <span class="skill-pill">CodeQL</span>
+            <span class="skill-pill">Semgrep</span>
+            <span class="skill-pill">Autopsy</span>
+            <span class="skill-pill">NMap</span>
+            <span class="skill-pill">Cisco Packet Tracer</span>
+            <span class="skill-pill">NS-2</span>
+            <span class="skill-pill">DBeaver</span>
+            <span class="skill-pill">Navicat</span>
+          </div>
+        </div>
+        <div class="skill-category fade-up" data-cat="design">
+          <h3>Design</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Adobe Photoshop</span>
+            <span class="skill-pill">Adobe Illustrator</span>
+            <span class="skill-pill">MS Word</span>
+            <span class="skill-pill">MS PowerPoint</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+      <div class="timeline">
+        <!-- Iron Software -->
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <h3><a href="https://ironsoftware.com/" target="_blank" rel="noopener noreferrer">Iron Software</a></h3>
+              <span class="timeline-role">Software Engineer</span>
+            </div>
+            <p class="timeline-date">May 2025 &ndash; Present</p>
+            <ul>
+              <li>Spearheaded in-memory multi-page TIFF conversion achieving 3.4x faster PDF processing and 95% lower memory usage, enabling scalable cloud and serverless deployments</li>
+              <li>Built in-house PPTX-to-image conversion pipeline, reducing processing time by 40% and boosting rendering reliability by over 90%</li>
+              <li>Redesigned HTML header/footer rendering with batch processing and warm tab reuse, delivering 1.4x&ndash;5.5x faster rendering and 5&ndash;15% lower memory usage on large PDFs</li>
+              <li>Engineered full PDF/UA accessibility compliance for HTML-to-PDF rendering &mdash; fixing annotation ordering, cross-page MCID assignment, and ParentTree integrity &mdash; achieving 100% PAC and VeraPDF pass rate with 5&ndash;10x faster tag tree processing</li>
+              <li>Implemented a robust PDF digital signature verification pipeline with certificate trust chain validation, revocation status checking, weak algorithm detection, byte-range integrity verification, and incremental tampering detection for multi-signature documents</li>
+              <li>Compiled ZXing C++ barcode engine into WebAssembly and integrated with Blazor WebAssembly, enabling barcode encode/decode in browser-based and serverless environments</li>
+              <li>Extended OCR passport reading with full MRZ field parsing and best-effort Visual Inspection Zone (VIZ) extraction including gender and date-of-issue fields</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-chip">C#</span>
+              <span class="tech-chip">.NET</span>
+              <span class="tech-chip">Azure Cloud</span>
+              <span class="tech-chip">C++ Debugging</span>
+              <span class="tech-chip">Docker</span>
+              <span class="tech-chip">WASM</span>
+              <span class="tech-chip">Blazor</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- OpenRefactory -->
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <h3><a href="https://www.openrefactory.com/" target="_blank" rel="noopener noreferrer">OpenRefactory, Inc.</a></h3>
+              <span class="timeline-role">Software Security Engineer</span>
+            </div>
+            <p class="timeline-date">Aug 2024 &ndash; April 2025</p>
+            <ul>
+              <li>Contributed to the Intelligent Code Repair (iCR) product suite, improving bug detection and automated resolution workflows</li>
+              <li>Collaborated with Team Lead to integrate backend intelligence with user-facing components, ensuring seamless system performance and scalability</li>
+              <li>Designed and implemented backend architectures from scratch for Project Clean Beach and Triage Portal, managing package, release, and bug data for 1000+ open-source projects</li>
+              <li>Engineered SBOM analysis and CSV parsing tools to extract data on 500+ vulnerabilities, providing CVE details and secure release suggestions to development teams</li>
+              <li>Built internal CLI tools for cloud-to-database migration and SBOM normalization, improving data consistency and migration speed by 40%</li>
+              <li>Developed signed attestations generation with mutex/semaphore-based concurrency control for thread-safe verification of bug-free projects</li>
+              <li>Contributed to frontend design and optimization using React, enhancing UI responsiveness and interactivity by 30%</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-chip">Express.js</span>
+              <span class="tech-chip">ReactJS</span>
+              <span class="tech-chip">Vite</span>
+              <span class="tech-chip">Deno 2.0</span>
+              <span class="tech-chip">PostgreSQL</span>
+              <span class="tech-chip">Redis</span>
+              <span class="tech-chip">Prisma ORM</span>
+              <span class="tech-chip">MongoDB</span>
+              <span class="tech-chip">Docker</span>
+              <span class="tech-chip">Java</span>
+              <span class="tech-chip">CodeQL</span>
+              <span class="tech-chip">Semgrep</span>
+              <span class="tech-chip">Stripe</span>
+              <span class="tech-chip">Twilio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Limbics AI -->
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <h3><a href="https://limbics.ai/" target="_blank" rel="noopener noreferrer">Limbics AI</a></h3>
+              <span class="timeline-role">Embedded Software Engineer Intern</span>
+            </div>
+            <p class="timeline-date">Jan 2024 &ndash; April 2024</p>
+            <ul>
+              <li>Established a master-slave IoT architecture using Raspberry Pi and ESP32 for structural health monitoring, integrating BMI160 sensors for precision data acquisition</li>
+              <li>Optimized power consumption through strategic sleep mode implementation and selection of low-power components</li>
+              <li>Enabled real-time data transmission to Azure Cloud IoT and initiated AI integration for predictive maintenance and anomaly detection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Things I've Built</h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Meetify -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/Shehabul-Islam-Sawraz/Meetify" target="_blank" rel="noopener noreferrer">Meetify</a></h3>
+            <span class="project-year">2025</span>
+          </div>
+          <p class="project-desc">A production-grade video conferencing platform with real-time meetings, screen sharing, session recording, participant controls, role-based auth via Clerk, personalized rooms with shareable links, and future meeting scheduling &mdash; all powered by GetStream.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">Clerk</span>
+              <span class="tech-chip">GetStream</span>
+              <span class="tech-chip">Tailwind CSS</span>
+              <span class="tech-chip">ShadCN</span>
+            </div>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/Meetify" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Meetify on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- ChaatNChat -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/Shehabul-Islam-Sawraz/ChaatNChat" target="_blank" rel="noopener noreferrer">ChaatNChat</a></h3>
+            <span class="project-year">2024</span>
+          </div>
+          <p class="project-desc">Full-stack real-time chat app with Socket.IO for low-latency messaging, JWT auth, PostgreSQL via Sequelize, Redis session caching, Cloudinary media storage, and Redux Toolkit for optimistic UI updates.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Express.js</span>
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">Socket.IO</span>
+              <span class="tech-chip">PostgreSQL</span>
+              <span class="tech-chip">Redis</span>
+            </div>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/ChaatNChat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View ChaatNChat on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- PicPred -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/Shehabul-Islam-Sawraz/PicPred" target="_blank" rel="noopener noreferrer">PicPred</a></h3>
+            <span class="project-year">2024</span>
+          </div>
+          <p class="project-desc">AI-powered image classification web app using Django REST + React frontend. Leverages Keras InceptionResNetV2 for high-accuracy multi-class prediction with drag-and-drop upload and clean RESTful API architecture.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Django</span>
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">TensorFlow</span>
+              <span class="tech-chip">Keras</span>
+            </div>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/PicPred" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PicPred on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Music Instruments Classification -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/ehsankader16/CSE-472-ML_Project" target="_blank" rel="noopener noreferrer">Music Instruments Classification</a></h3>
+            <span class="project-year">2024</span>
+          </div>
+          <p class="project-desc">Deep learning pipeline classifying 20 musical instrument categories from raw audio. Processes signals into Mel Spectrograms via Librosa, fed into a custom ResNet-18-inspired architecture for high accuracy.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">TensorFlow</span>
+              <span class="tech-chip">Librosa</span>
+              <span class="tech-chip">ResNet-18</span>
+            </div>
+            <a href="https://github.com/ehsankader16/CSE-472-ML_Project" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View project on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- ParkedCar -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/orgs/ParkedCar-Dev/repositories" target="_blank" rel="noopener noreferrer">ParkedCar</a></h3>
+            <span class="project-year">2023</span>
+          </div>
+          <p class="project-desc">Mobile app turning idle apartment parking spaces into a rental marketplace. Car owners list spots for hourly/daily/monthly rental with flexible pricing, backed by Express.js REST API and PostgreSQL.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Java</span>
+              <span class="tech-chip">Express.js</span>
+              <span class="tech-chip">Sequelize</span>
+              <span class="tech-chip">PostgreSQL</span>
+            </div>
+            <a href="https://github.com/orgs/ParkedCar-Dev/repositories" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View ParkedCar on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- YACC -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/Shehabul-Islam-Sawraz/CSE_310_Compiler_Sessional" target="_blank" rel="noopener noreferrer">YACC &ndash; Compiler Compiler</a></h3>
+            <span class="project-year">2022</span>
+          </div>
+          <p class="project-desc">Fully functional compiler from scratch covering every phase: symbol table manager, Flex lexical analyzer, Bison semantic analyzer for grammar parsing and type checking, and x86 assembly code generator.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">C</span>
+              <span class="tech-chip">Flex</span>
+              <span class="tech-chip">Bison</span>
+              <span class="tech-chip">x86 Assembly</span>
+            </div>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/CSE_310_Compiler_Sessional" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View YACC on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- YAPG -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/Shehabul-Islam-Sawraz/YAPG-Yet_Another_Pong_Game" target="_blank" rel="noopener noreferrer">YAPG &ndash; Pong Game</a></h3>
+            <span class="project-year">2022</span>
+          </div>
+          <p class="project-desc">Hardware-level Pong on ATMega32 microcontroller &mdash; no OS. Ultrasonic Sonar paddle control, haptic feedback via vibration motor, audio cues, and real-time rendering on LED Matrix and LCD Display.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">ATMega32</span>
+              <span class="tech-chip">Embedded C</span>
+              <span class="tech-chip">Ultrasonic Sonar</span>
+            </div>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/YAPG-Yet_Another_Pong_Game" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View YAPG on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Chess -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/ezmata-101/Chess" target="_blank" rel="noopener noreferrer">Chess</a></h3>
+            <span class="project-year">2021</span>
+          </div>
+          <p class="project-desc">Feature-complete chess game for Intra BUET GameJam 2021. Full rules with special moves, check/checkmate detection, Sodium Attack strategy, responsive JavaFX GUI, and async task management.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Java</span>
+              <span class="tech-chip">JavaFX</span>
+            </div>
+            <a href="https://github.com/ezmata-101/Chess" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Chess on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- eM-Client -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/Shehabul-Islam-Sawraz/eM-Client" target="_blank" rel="noopener noreferrer">eM-Client</a></h3>
+            <span class="project-year">2021</span>
+          </div>
+          <p class="project-desc">Desktop email client in Java supporting send/receive with clean JavaFX interface. Java Networking handles concurrent sessions for multiple inboxes in parallel without UI freezes.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Java</span>
+              <span class="tech-chip">JavaFX</span>
+              <span class="tech-chip">Java Networking</span>
+            </div>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/eM-Client" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View eM-Client on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Hello Doctor -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/Shehabul-Islam-Sawraz/HelloDoctor" target="_blank" rel="noopener noreferrer">Hello Doctor</a></h3>
+            <span class="project-year">2021</span>
+          </div>
+          <p class="project-desc">Android app bridging doctor-patient communication. Appointment scheduling, real-time messaging, and health monitoring backed by Firebase Storage with Maven dependency management.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Java</span>
+              <span class="tech-chip">Android</span>
+              <span class="tech-chip">Firebase</span>
+              <span class="tech-chip">Maven</span>
+            </div>
+            <a href="https://github.com/Shehabul-Islam-Sawraz/HelloDoctor" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Hello Doctor on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- RentaStay -->
+        <div class="project-card fade-up">
+          <div class="project-card-header">
+            <h3><a href="https://github.com/fardinanam/RentaStay" target="_blank" rel="noopener noreferrer">RentaStay</a></h3>
+            <span class="project-year">2021</span>
+          </div>
+          <p class="project-desc">Full-featured Django room rental platform &mdash; browse by location or list properties. Oracle database for robust relational data, Bootstrap + jQuery frontend. Honorable Mention as standout DB term project.</p>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-chip">Django</span>
+              <span class="tech-chip">Oracle</span>
+              <span class="tech-chip">Bootstrap</span>
+              <span class="tech-chip">jQuery</span>
+            </div>
+            <a href="https://github.com/fardinanam/RentaStay" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View RentaStay on GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH & PUBLICATIONS ============ -->
+  <section class="section" id="research">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Research &amp; Publications</h2>
+      </div>
+      <div class="research-cards">
+        <!-- Publication -->
+        <div class="research-card fade-up">
+          <span class="research-type">Publication</span>
+          <h3>Zero-shot Prompting for Code Complexity Prediction Using GitHub Copilot</h3>
+          <p class="research-meta"><i class="fa-solid fa-calendar"></i> 2023 &middot; IEEE/ACM 2nd International Workshop on Natural Language-Based Software Engineering (NLBSE)</p>
+          <p class="research-authors">Joanna Cecilia da Silva Santos, Mohammed Latif Siddiq, Abdus Samee, Sk Ruhul Azgor, Md. Asif Haider, <span class="me">Shehabul Islam Sawraz</span></p>
+          <a href="https://doi.org/10.1109/NLBSE59153.2023.00018" target="_blank" rel="noopener noreferrer" class="btn-paper">View Paper <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Thesis -->
+        <div class="research-card fade-up">
+          <span class="research-type">Undergraduate Thesis</span>
+          <h3>Adaptive Duty Cycling Leveraging Heterogeneous Sleep Modes for Modbus-Based Wired IoT Systems</h3>
+          <p class="research-meta"><i class="fa-solid fa-calendar"></i> 2024 &middot; Supervisor: Dr. A. B. M. Alim Al Islam, Professor, BUET</p>
+          <ul>
+            <li>Formulated an innovative model applying duty cycling &mdash; typically used in wireless sensor networks &mdash; to energy-efficient wired networks in hostile industrial environments</li>
+            <li>Orchestrated a Master-Slave hierarchy with Reinforcement Learning-based adaptive duty cycling to optimize energy consumption and ensure robust performance</li>
+            <li>Conducted extensive testbed experiments demonstrating significant reductions in energy usage and enhanced data communication efficiency under extreme conditions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AFFILIATIONS & ACHIEVEMENTS ============ -->
+  <section class="section" id="achievements">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Affiliations &amp; Achievements</h2>
+      </div>
+      <div class="affil-grid">
+        <div class="affil-section fade-up">
+          <h3><i class="fa-solid fa-users"></i> Affiliations</h3>
+          <ul class="affil-list">
+            <li>
+              <span class="affil-icon">&#128737;&#65039;</span>
+              <div><span class="affil-year">2023&ndash;24:</span> President, BUET Cyber Security Club</div>
+            </li>
+            <li>
+              <span class="affil-icon">&#128421;&#65039;</span>
+              <div><span class="affil-year">2021&ndash;23:</span> Member, IEEE Computer Society BUET Student Branch Chapter</div>
+            </li>
+          </ul>
+        </div>
+        <div class="affil-section fade-up">
+          <h3><i class="fa-solid fa-trophy"></i> Major Achievements</h3>
+          <ul class="affil-list">
+            <li>
+              <span class="affil-icon">&#127942;</span>
+              <div><span class="affil-year">2024:</span> Problem Setter, Inter University Capture the Flag &mdash; BUET CSE FEST 2024</div>
+            </li>
+            <li>
+              <span class="affil-icon">&#127941;</span>
+              <div><span class="affil-year">2023:</span> Organizer &amp; Problem Setter, Inter University Capture the Flag &mdash; BUET CSE FEST 2023</div>
+            </li>
+            <li>
+              <span class="affil-icon">&#129351;</span>
+              <div><span class="affil-year">2020:</span> Winner (Tertiary Student Project Category), BASIS National ICT Awards</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <h3>Let's connect!</h3>
+          <p>Whether you have a question, a project idea, or just want to say hi &mdash; my inbox is always open. I'll do my best to get back to you promptly.</p>
+          <div class="contact-links">
+            <a href="mailto:shehabulislamsawraz@gmail.com" class="contact-link">
+              <i class="fa-solid fa-envelope"></i>
+              <span>shehabulislamsawraz@gmail.com</span>
+            </a>
+            <a href="tel:+8801627230364" class="contact-link">
+              <i class="fa-solid fa-phone"></i>
+              <span>+880 1627 230364</span>
+            </a>
+            <a href="https://github.com/Shehabul-Islam-Sawraz" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <i class="fa-brands fa-github"></i>
+              <span>Shehabul-Islam-Sawraz</span>
+            </a>
+            <a href="https://www.linkedin.com/in/shehabul-islam-sawraz-ba03542ab/" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <span>shehabul-islam-sawraz</span>
+            </a>
+          </div>
+        </div>
+        <div class="fade-up">
+          <!-- Replace YOUR_FORM_ID with your Formspree endpoint from formspree.io -->
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="subject" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          </form>
+          <div id="form-success" class="form-success">Thanks! I'll get back to you soon &#127881;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://github.com/Shehabul-Islam-Sawraz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/shehabul-islam-sawraz-ba03542ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:shehabulislamsawraz@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="footer-text">Designed &amp; Built by Shehabul Islam Sawraz &middot; 2025</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Confetti Canvas (Easter Egg) -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
