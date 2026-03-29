@@ -2,6 +2,126 @@
    COMPONENTS — Navbar, Footer, Back-to-top, Modal
    ============================================ */
 
+/* ---------- INTRO LOADER ---------- */
+#intro-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  clip-path: inset(0 0 0 0);
+}
+
+#intro-loader.exit {
+  clip-path: inset(0 0 100% 0);
+}
+
+.loader-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+}
+
+.loader-name span {
+  display: inline-block;
+  animation: loaderLetterIn 0.3s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes loaderLetterIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.loader-bar {
+  width: 200px;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-gradient);
+  transition: width 1.5s ease;
+  border-radius: 2px;
+}
+
+.loader-tagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.loader-tagline.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- CUSTOM CURSOR ---------- */
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button, input, textarea { cursor: none; }
+}
+
+#cursor-dot {
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  will-change: transform;
+}
+
+#cursor-ring {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  opacity: 0.4;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+#cursor-dot.hover {
+  width: 6px;
+  height: 6px;
+  opacity: 0.5;
+}
+
+#cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: -30px;
+  opacity: 0.2;
+  border-color: var(--accent-cyan);
+}
+
 /* ---------- NAVBAR ---------- */
 .navbar {
   position: fixed;
@@ -327,6 +447,240 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(99,102,241,0.3);
   color: #FFF;
+}
+
+/* ---------- COMMAND PALETTE ---------- */
+.palette-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 18vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.palette-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.palette-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px);
+  transition: transform 0.2s ease;
+}
+
+.palette-overlay.active .palette-box {
+  transform: translateY(0);
+}
+
+.palette-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.palette-input-wrap i {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.palette-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-primary);
+}
+
+.palette-input::placeholder { color: var(--text-muted); }
+
+.palette-input-wrap kbd {
+  padding: 2px 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.palette-list {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.palette-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.palette-item i {
+  width: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.palette-item.selected {
+  background: var(--pill-bg);
+  color: var(--text-primary);
+}
+
+.palette-item.selected i {
+  color: var(--accent);
+}
+
+/* ---------- TERMINAL EASTER EGG ---------- */
+.terminal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.terminal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.terminal-box {
+  background: #1E1E2E;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+  transform: translateY(10px) scale(0.97);
+  transition: transform 0.2s ease;
+}
+
+.terminal-overlay.active .terminal-box {
+  transform: translateY(0) scale(1);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #181825;
+  border-bottom: 1px solid #313244;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #F38BA8; }
+.dot-yellow { background: #F9E2AF; }
+.dot-green { background: #A6E3A1; }
+
+.terminal-title {
+  flex: 1;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.8rem;
+  color: #A6ADC8;
+}
+
+.terminal-close {
+  background: none;
+  border: none;
+  color: #6C7086;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.terminal-close:hover { color: #F38BA8; }
+
+.terminal-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #CDD6F4;
+}
+
+.terminal-output {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-line { margin-bottom: 2px; }
+
+.terminal-cmd { color: #89B4FA; }
+.terminal-accent { color: #A6E3A1; font-weight: 600; }
+.terminal-error { color: #F38BA8; }
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.terminal-prompt {
+  color: #A6E3A1;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.terminal-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #CDD6F4;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: #A6E3A1;
 }
 
 /* ---------- CONFETTI CANVAS ---------- */

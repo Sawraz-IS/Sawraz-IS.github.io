@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Software Engineer',
     'Full-Stack Developer',
     'Security Researcher',
-    'Aspiring PhD Candidate',
+    'PhD Applicant — Systems Security',
     'Open Source Contributor'
   ];
 

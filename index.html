@@ -1,3 +1,21 @@
+<!--
+  ╔═══════════════════════════════════════════════════════════╗
+  ║                                                           ║
+  ║   ███████  █████  ██     ██ ██████   █████  ███████       ║
+  ║   ██      ██   ██ ██     ██ ██   ██ ██   ██    ███        ║
+  ║   ███████ ███████ ██  █  ██ ██████  ███████   ███         ║
+  ║        ██ ██   ██ ██ ███ ██ ██   ██ ██   ██  ███          ║
+  ║   ███████ ██   ██  ███ ███  ██   ██ ██   ██ ███████       ║
+  ║                                                           ║
+  ║   Hi curious developer 👋                                 ║
+  ║   Built with vanilla HTML, CSS & JS — no frameworks.      ║
+  ║   Type "hire" anywhere for a surprise.                    ║
+  ║   Press Ctrl+K / ⌘K for the command palette.              ║
+  ║   Press ` (backtick) for a hidden terminal.               ║
+  ║                                                           ║
+  ║   Source: github.com/Shehabul-Islam-Sawraz                ║
+  ╚═══════════════════════════════════════════════════════════╝
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +45,16 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+
+  <!-- Fallback for JS-disabled browsers -->
+  <noscript>
+    <style>
+      .fade-up { opacity: 1 !important; transform: none !important; }
+      .skill-pill { opacity: 1 !important; transform: none !important; }
+      .typewriter-text::after { content: 'Software Engineer'; }
+      #scroll-progress, .back-to-top, #confetti-canvas { display: none !important; }
+    </style>
+  </noscript>
 
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress"></div>
@@ -111,7 +139,26 @@
         <div class="about-avatar">SIS</div>
         <div class="about-text">
           <p>I'm a Computer Science and Engineering graduate from Bangladesh University of Engineering and Technology (BUET), currently working as a Software Engineer at Iron Software. My interests span systems programming, software security, reverse engineering, cryptography, and full-stack web development. I'm passionate about writing high-performance, reliable software and am actively pursuing research opportunities for graduate studies.</p>
-          <div class="about-chip">&#127891; Targeting PhD programs in Computer Science &mdash; Systems Security &amp; Energy-Efficient Computing</div>
+          <div class="about-chip">&#127891; PhD Applicant in Systems Security &amp; Energy-Efficient Computing &mdash; Fall 2026</div>
+        </div>
+      </div>
+      <!-- Stat Cards -->
+      <div class="about-stats fade-up">
+        <div class="stat-card">
+          <span class="stat-number" data-count="3" data-suffix="+">0+</span>
+          <span class="stat-label">Years Industry Experience</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-count="1">0</span>
+          <span class="stat-label">IEEE Publication</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-count="11" data-suffix="+">0+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-count="3">0</span>
+          <span class="stat-label">Companies Worked At</span>
         </div>
       </div>
     </div>
@@ -710,12 +757,21 @@
   <canvas id="confetti-canvas"></canvas>
 
   <!-- Modular Scripts -->
+  <script src="js/loader.js"></script>
+  <script src="js/cursor.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/typewriter.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/contact.js"></script>
+  <!-- VanillaTilt for 3D card effect -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/magnetic.js"></script>
+  <script src="js/palette.js"></script>
+  <script src="js/scramble.js"></script>
+  <script src="js/terminal.js"></script>
   <script src="js/confetti.js"></script>
 </body>
 </html>

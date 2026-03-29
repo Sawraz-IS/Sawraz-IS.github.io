@@ -65,6 +65,8 @@
     justify-items: center;
   }
 
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+
   .affil-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
