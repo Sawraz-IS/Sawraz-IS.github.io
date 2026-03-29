@@ -2,6 +2,56 @@
    COMPONENTS — Navbar, Footer, Back-to-top, Modal
    ============================================ */
 
+/* ---------- CUSTOM CURSOR ---------- */
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button, input, textarea { cursor: none; }
+}
+
+#cursor-dot {
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  will-change: transform;
+}
+
+#cursor-ring {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  opacity: 0.4;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+#cursor-dot.hover {
+  width: 6px;
+  height: 6px;
+  opacity: 0.5;
+}
+
+#cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: -30px;
+  opacity: 0.2;
+  border-color: var(--accent-cyan);
+}
+
 /* ---------- NAVBAR ---------- */
 .navbar {
   position: fixed;
