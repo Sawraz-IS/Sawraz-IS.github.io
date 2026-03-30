@@ -4,58 +4,59 @@
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-  /* Light Theme (default) */
-  --bg-primary: #FAFAFA;
+  /* Light Theme — Warm cream + emerald/amber accents */
+  --bg-primary: #FFFBF5;
   --bg-secondary: #FFFFFF;
   --bg-card: #FFFFFF;
-  --text-primary: #1A1A2E;
-  --text-secondary: #4A4A6A;
-  --text-muted: #6B7280;
-  --accent: #4F46E5;
-  --accent-light: #6366F1;
-  --accent-cyan: #06B6D4;
-  --accent-gradient: linear-gradient(135deg, #4F46E5, #06B6D4);
-  --border: #E5E7EB;
-  --shadow: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
-  --navbar-bg: rgba(255,255,255,0.8);
+  --text-primary: #1B2A1D;
+  --text-secondary: #3D5241;
+  --text-muted: #6B7C6E;
+  --accent: #059669;
+  --accent-light: #10B981;
+  --accent-cyan: #D97706;
+  --accent-gradient: linear-gradient(135deg, #059669, #D97706);
+  --border: #E2E8E3;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 30px rgba(5,150,105,0.1);
+  --navbar-bg: rgba(255,251,245,0.85);
   --navbar-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  --pill-bg: #EEF2FF;
-  --pill-text: #4F46E5;
-  --input-bg: #F9FAFB;
-  --timeline-line: #E5E7EB;
-  --hero-dot: rgba(79,70,229,0.08);
-  --scrollbar-track: #F3F4F6;
-  --scrollbar-thumb: #D1D5DB;
-  --footer-bg: #F3F4F6;
+  --pill-bg: #ECFDF5;
+  --pill-text: #059669;
+  --input-bg: #F8FAF8;
+  --timeline-line: #D1DDD3;
+  --hero-dot: rgba(5,150,105,0.06);
+  --scrollbar-track: #F0F4F0;
+  --scrollbar-thumb: #C5D1C7;
+  --footer-bg: #F0F4F0;
   --modal-overlay: rgba(0,0,0,0.5);
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0F0F0F;
-  --bg-secondary: #161625;
-  --bg-card: #1A1A2E;
-  --text-primary: #F1F1F1;
-  --text-secondary: #A0A0C0;
-  --text-muted: #7A7A9A;
-  --accent: #6366F1;
-  --accent-light: #818CF8;
-  --accent-cyan: #22D3EE;
-  --accent-gradient: linear-gradient(135deg, #6366F1, #22D3EE);
-  --border: #2A2A40;
-  --shadow: 0 1px 3px rgba(0,0,0,0.3);
-  --shadow-lg: 0 10px 30px rgba(0,0,0,0.4);
-  --navbar-bg: rgba(15,15,15,0.85);
-  --navbar-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  --pill-bg: rgba(99,102,241,0.15);
-  --pill-text: #818CF8;
-  --input-bg: #1A1A2E;
-  --timeline-line: #2A2A40;
-  --hero-dot: rgba(99,102,241,0.07);
-  --scrollbar-track: #1A1A2E;
-  --scrollbar-thumb: #3A3A50;
-  --footer-bg: #0A0A0A;
-  --modal-overlay: rgba(0,0,0,0.7);
+  /* Dark Theme — Deep navy + bright emerald/amber neon */
+  --bg-primary: #0A0E1A;
+  --bg-secondary: #0F1424;
+  --bg-card: #131A2B;
+  --text-primary: #E8ECF4;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --accent: #34D399;
+  --accent-light: #6EE7B7;
+  --accent-cyan: #FBBF24;
+  --accent-gradient: linear-gradient(135deg, #34D399, #FBBF24);
+  --border: #1E293B;
+  --shadow: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 30px rgba(52,211,153,0.08);
+  --navbar-bg: rgba(10,14,26,0.9);
+  --navbar-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  --pill-bg: rgba(52,211,153,0.1);
+  --pill-text: #34D399;
+  --input-bg: #131A2B;
+  --timeline-line: #1E293B;
+  --hero-dot: rgba(52,211,153,0.05);
+  --scrollbar-track: #0F1424;
+  --scrollbar-thumb: #1E293B;
+  --footer-bg: #080C16;
+  --modal-overlay: rgba(0,0,0,0.75);
 }
 
 /* ---------- Reset ---------- */
@@ -197,11 +198,11 @@ ul { list-style: none; }
 .btn-primary {
   background: var(--accent-gradient);
   color: #FFF;
-  box-shadow: 0 4px 15px rgba(79,70,229,0.3);
+  box-shadow: 0 4px 15px rgba(5,150,105,0.3);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(79,70,229,0.4);
+  box-shadow: 0 6px 20px rgba(5,150,105,0.4);
   color: #FFF;
 }
 

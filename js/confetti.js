@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.height = window.innerHeight;
     canvas.style.display = 'block';
 
-    const colors = ['#6366F1', '#22D3EE', '#F472B6', '#FBBF24', '#34D399', '#F87171', '#818CF8'];
+    const colors = ['#34D399', '#FBBF24', '#059669', '#D97706', '#6EE7B7', '#F472B6', '#22D3EE'];
     const particles = [];
 
     for (let i = 0; i < 150; i++) {
