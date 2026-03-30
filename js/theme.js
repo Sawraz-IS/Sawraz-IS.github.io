@@ -18,9 +18,8 @@ window.PALETTES = [
 /* Apply saved palette + theme immediately to prevent flash */
 (function init() {
   const savedPalette = localStorage.getItem('palette');
-  if (savedPalette) {
-    document.documentElement.setAttribute('data-palette', savedPalette);
-  }
+  const defaultPalette = window.DEFAULT_PALETTE || 'ash-crimson';
+  document.documentElement.setAttribute('data-palette', savedPalette || defaultPalette);
 
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
