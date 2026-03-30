@@ -39,7 +39,7 @@
 }
 
 .loader-line:last-child {
-  color: #60A5FA;
+  color: #FBBF24;
 }
 
 @keyframes loaderLineIn {
@@ -87,7 +87,7 @@
 .loader-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #2563EB, #3B82F6, #22D3EE);
+  background: linear-gradient(90deg, #D97706, #F59E0B, #EA580C);
   transition: width 0.8s ease;
   border-radius: 2px;
 }
@@ -345,7 +345,7 @@
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   z-index: 100;
-  box-shadow: 0 4px 15px rgba(37,99,235,0.3);
+  box-shadow: 0 4px 15px rgba(217,119,6,0.3);
 }
 
 .back-to-top.visible {
@@ -477,7 +477,7 @@
 
 .modal-links .btn-github:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(37,99,235,0.3);
+  box-shadow: 0 4px 15px rgba(217,119,6,0.3);
   color: #FFF;
 }
 
