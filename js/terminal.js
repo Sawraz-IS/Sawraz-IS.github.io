@@ -170,7 +170,7 @@ LinkedIn: linkedin.com/in/shehabul-islam-sawraz-ba03542ab`,
    │   ▀▄▄▄▀ ▀▄▄▄▀   │    Host:    GitHub Pages
    │     ▄▄▄▄▄▄▄      │    Uptime:  Since 2025
    │     █     █       │    Shell:   vanilla.js
-   │     ▀▀▀▀▀▀▀      │    Theme:   Emerald/Amber
+   │     ▀▀▀▀▀▀▀      │    Theme:   Amber/Stone
    ╰──────────────────╯    Editor:   VS Code
                             Lang:     C# / JS / Python
                             Coffee:   ████████████ 100%`,
