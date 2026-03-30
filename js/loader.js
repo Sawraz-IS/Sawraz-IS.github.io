@@ -1,55 +1,100 @@
 /* ============================================
-   LOADER — Cinematic intro that plays once
-   per session (gated by sessionStorage)
+   LOADER — Terminal-style boot sequence
+   Plays once per session (gated by sessionStorage)
    ============================================ */
 
 (function () {
   if (sessionStorage.getItem('loaded')) return;
   sessionStorage.setItem('loaded', '1');
 
-  /* Create overlay */
   const overlay = document.createElement('div');
   overlay.id = 'intro-loader';
   overlay.innerHTML = `
-    <div class="loader-name" aria-hidden="true"></div>
-    <div class="loader-bar"><div class="loader-fill"></div></div>
-    <div class="loader-tagline">Software Engineer &middot; Security Researcher</div>
+    <div class="loader-terminal">
+      <div class="loader-lines"></div>
+      <div class="loader-name-wrap">
+        <div class="loader-name" aria-hidden="true"></div>
+        <div class="loader-cursor">_</div>
+      </div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-hint">Press any key to skip</div>
+    </div>
   `;
   document.body.prepend(overlay);
-
-  /* Prevent scroll during loader */
   document.body.style.overflow = 'hidden';
 
-  /* Animate name letter by letter */
-  const name = 'Shehabul Islam Sawraz';
+  const linesEl = overlay.querySelector('.loader-lines');
   const nameEl = overlay.querySelector('.loader-name');
+  const cursorEl = overlay.querySelector('.loader-cursor');
   const fill = overlay.querySelector('.loader-fill');
-  const tagline = overlay.querySelector('.loader-tagline');
+  const hint = overlay.querySelector('.loader-hint');
 
-  let i = 0;
-  function typeLetter() {
-    if (i < name.length) {
-      const span = document.createElement('span');
-      span.textContent = name[i];
-      span.style.animationDelay = (i * 0.04) + 's';
-      nameEl.appendChild(span);
-      i++;
-      setTimeout(typeLetter, 50);
+  const bootLines = [
+    { text: '> initializing portfolio.sys...', delay: 0 },
+    { text: '> loading modules: [security, systems, web]', delay: 300 },
+    { text: '> verifying credentials... ✓ BUET CSE', delay: 600 },
+    { text: '> connecting: iron-software.service... ✓', delay: 900 },
+    { text: '> compiling experience: 3+ years... done', delay: 1200 },
+    { text: '> identity resolved:', delay: 1500 },
+  ];
+
+  let aborted = false;
+
+  /* Type boot lines */
+  bootLines.forEach(({ text, delay }) => {
+    setTimeout(() => {
+      if (aborted) return;
+      const line = document.createElement('div');
+      line.className = 'loader-line';
+      line.textContent = text;
+      linesEl.appendChild(line);
+    }, delay);
+  });
+
+  /* Type name after boot lines */
+  const name = 'Shehabul Islam Sawraz';
+  let charIdx = 0;
+
+  function typeName() {
+    if (aborted || charIdx >= name.length) {
+      if (!aborted) afterName();
+      return;
     }
+    nameEl.textContent += name[charIdx];
+    charIdx++;
+    setTimeout(typeName, 60);
   }
 
-  /* Start sequence */
-  requestAnimationFrame(() => {
-    typeLetter();
-    /* Progress bar fills over 1.5s */
-    setTimeout(() => fill.style.width = '100%', 100);
-    /* Show tagline */
-    setTimeout(() => tagline.classList.add('show'), 800);
-    /* Reveal site */
+  setTimeout(() => {
+    if (!aborted) typeName();
+  }, 1800);
+
+  function afterName() {
+    cursorEl.classList.add('blink');
+    fill.style.width = '100%';
     setTimeout(() => {
-      overlay.classList.add('exit');
-      document.body.style.overflow = '';
-      setTimeout(() => overlay.remove(), 600);
-    }, 2200);
-  });
+      if (!aborted) reveal();
+    }, 800);
+  }
+
+  function reveal() {
+    overlay.classList.add('exit');
+    document.body.style.overflow = '';
+    setTimeout(() => overlay.remove(), 700);
+  }
+
+  /* Skip on any key or click */
+  function skip() {
+    if (aborted) return;
+    aborted = true;
+    reveal();
+  }
+
+  document.addEventListener('keydown', skip, { once: true });
+  overlay.addEventListener('click', skip, { once: true });
+
+  /* Show skip hint after 1s */
+  setTimeout(() => {
+    if (!aborted) hint.classList.add('show');
+  }, 1000);
 })();
