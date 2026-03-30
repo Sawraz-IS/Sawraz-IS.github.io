@@ -4,58 +4,58 @@
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-  /* Light Theme — Warm cream + emerald/amber accents */
-  --bg-primary: #FFFBF5;
+  /* Light Theme — Cool slate + steel blue */
+  --bg-primary: #F8FAFC;
   --bg-secondary: #FFFFFF;
   --bg-card: #FFFFFF;
-  --text-primary: #1B2A1D;
-  --text-secondary: #3D5241;
-  --text-muted: #6B7C6E;
-  --accent: #059669;
-  --accent-light: #10B981;
-  --accent-cyan: #D97706;
-  --accent-gradient: linear-gradient(135deg, #059669, #D97706);
-  --border: #E2E8E3;
-  --shadow: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-lg: 0 10px 30px rgba(5,150,105,0.1);
-  --navbar-bg: rgba(255,251,245,0.85);
-  --navbar-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  --pill-bg: #ECFDF5;
-  --pill-text: #059669;
-  --input-bg: #F8FAF8;
-  --timeline-line: #D1DDD3;
-  --hero-dot: rgba(5,150,105,0.06);
-  --scrollbar-track: #F0F4F0;
-  --scrollbar-thumb: #C5D1C7;
-  --footer-bg: #F0F4F0;
-  --modal-overlay: rgba(0,0,0,0.5);
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --accent: #2563EB;
+  --accent-light: #3B82F6;
+  --accent-cyan: #0891B2;
+  --accent-gradient: linear-gradient(135deg, #2563EB, #0891B2);
+  --border: #E2E8F0;
+  --shadow: 0 1px 3px rgba(15,23,42,0.06);
+  --shadow-lg: 0 10px 30px rgba(37,99,235,0.08);
+  --navbar-bg: rgba(248,250,252,0.85);
+  --navbar-shadow: 0 1px 3px rgba(15,23,42,0.06);
+  --pill-bg: #EFF6FF;
+  --pill-text: #2563EB;
+  --input-bg: #F1F5F9;
+  --timeline-line: #CBD5E1;
+  --hero-dot: rgba(37,99,235,0.04);
+  --scrollbar-track: #F1F5F9;
+  --scrollbar-thumb: #CBD5E1;
+  --footer-bg: #F1F5F9;
+  --modal-overlay: rgba(15,23,42,0.5);
 }
 
 [data-theme="dark"] {
-  /* Dark Theme — Deep navy + bright emerald/amber neon */
-  --bg-primary: #0A0E1A;
-  --bg-secondary: #0F1424;
-  --bg-card: #131A2B;
-  --text-primary: #E8ECF4;
+  /* Dark Theme — Deep slate + bright blue */
+  --bg-primary: #0B1120;
+  --bg-secondary: #111827;
+  --bg-card: #162032;
+  --text-primary: #E2E8F0;
   --text-secondary: #94A3B8;
   --text-muted: #64748B;
-  --accent: #34D399;
-  --accent-light: #6EE7B7;
-  --accent-cyan: #FBBF24;
-  --accent-gradient: linear-gradient(135deg, #34D399, #FBBF24);
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
+  --accent-cyan: #22D3EE;
+  --accent-gradient: linear-gradient(135deg, #3B82F6, #22D3EE);
   --border: #1E293B;
   --shadow: 0 1px 3px rgba(0,0,0,0.4);
-  --shadow-lg: 0 10px 30px rgba(52,211,153,0.08);
-  --navbar-bg: rgba(10,14,26,0.9);
+  --shadow-lg: 0 10px 30px rgba(59,130,246,0.08);
+  --navbar-bg: rgba(11,17,32,0.9);
   --navbar-shadow: 0 1px 3px rgba(0,0,0,0.4);
-  --pill-bg: rgba(52,211,153,0.1);
-  --pill-text: #34D399;
-  --input-bg: #131A2B;
+  --pill-bg: rgba(59,130,246,0.1);
+  --pill-text: #60A5FA;
+  --input-bg: #162032;
   --timeline-line: #1E293B;
-  --hero-dot: rgba(52,211,153,0.05);
-  --scrollbar-track: #0F1424;
+  --hero-dot: rgba(59,130,246,0.04);
+  --scrollbar-track: #111827;
   --scrollbar-thumb: #1E293B;
-  --footer-bg: #080C16;
+  --footer-bg: #080E1C;
   --modal-overlay: rgba(0,0,0,0.75);
 }
 
@@ -198,11 +198,11 @@ ul { list-style: none; }
 .btn-primary {
   background: var(--accent-gradient);
   color: #FFF;
-  box-shadow: 0 4px 15px rgba(5,150,105,0.3);
+  box-shadow: 0 4px 15px rgba(37,99,235,0.3);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(5,150,105,0.4);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
   color: #FFF;
 }
 
