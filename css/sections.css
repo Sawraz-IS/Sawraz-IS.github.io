@@ -376,25 +376,13 @@
 
 .skill-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(217,119,6,0.2);
+  box-shadow: 0 4px 12px rgba(159,18,57,0.2);
 }
 
 /* Skill category color variants — muted, professional */
 /* Light theme */
-.skill-category[data-cat="languages"] .skill-pill { background: rgba(217,119,6,0.08); color: #B45309; }
-.skill-category[data-cat="frameworks"] .skill-pill { background: rgba(154,52,18,0.08); color: #9A3412; }
-.skill-category[data-cat="databases"] .skill-pill { background: rgba(120,113,108,0.08); color: #57534E; }
-.skill-category[data-cat="cloud"] .skill-pill { background: rgba(180,83,9,0.06); color: #92400E; }
-.skill-category[data-cat="security"] .skill-pill { background: rgba(220,38,38,0.07); color: #B91C1C; }
-.skill-category[data-cat="design"] .skill-pill { background: rgba(168,85,247,0.07); color: #7C3AED; }
-
-/* Dark theme */
-[data-theme="dark"] .skill-category[data-cat="languages"] .skill-pill { background: rgba(245,158,11,0.12); color: #FBBF24; }
-[data-theme="dark"] .skill-category[data-cat="frameworks"] .skill-pill { background: rgba(234,88,12,0.1); color: #FB923C; }
-[data-theme="dark"] .skill-category[data-cat="databases"] .skill-pill { background: rgba(168,162,158,0.1); color: #A8A29E; }
-[data-theme="dark"] .skill-category[data-cat="cloud"] .skill-pill { background: rgba(180,83,9,0.1); color: #D97706; }
-[data-theme="dark"] .skill-category[data-cat="security"] .skill-pill { background: rgba(239,68,68,0.1); color: #F87171; }
-[data-theme="dark"] .skill-category[data-cat="design"] .skill-pill { background: rgba(167,139,250,0.1); color: #A78BFA; }
+/* Skill pills inherit accent from active palette via CSS vars */
+.skill-category .skill-pill { background: var(--pill-bg); color: var(--pill-text); }
 
 /* ---------- EXPERIENCE (Timeline) ---------- */
 .timeline {
@@ -688,7 +676,7 @@
 
 .btn-paper:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(217,119,6,0.3);
+  box-shadow: 0 4px 15px rgba(159,18,57,0.3);
   color: #FFF;
 }
 
@@ -812,7 +800,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(217,119,6,0.1);
+  box-shadow: 0 0 0 3px rgba(159,18,57,0.1);
 }
 
 .form-group input::placeholder,
@@ -833,7 +821,7 @@
 
 .btn-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(217,119,6,0.3);
+  box-shadow: 0 6px 20px rgba(159,18,57,0.3);
 }
 
 .form-success {

@@ -3,6 +3,13 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  /* Build palette commands dynamically */
+  const paletteCommands = (window.PALETTES || []).map(p => ({
+    label: `Palette: ${p.name}`,
+    icon: 'fa-palette',
+    action: () => window.setPalette(p.id)
+  }));
+
   const commands = [
     { label: 'Go to About', icon: 'fa-user', action: () => scrollTo('#about') },
     { label: 'Go to Education', icon: 'fa-graduation-cap', action: () => scrollTo('#education') },
@@ -13,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { label: 'Go to Achievements', icon: 'fa-trophy', action: () => scrollTo('#achievements') },
     { label: 'Go to Contact', icon: 'fa-envelope', action: () => scrollTo('#contact') },
     { label: 'Toggle Dark Mode', icon: 'fa-moon', action: () => document.getElementById('theme-toggle').click() },
+    ...paletteCommands,
     { label: 'Open GitHub', icon: 'fa-brands fa-github', action: () => window.open('https://github.com/Shehabul-Islam-Sawraz', '_blank') },
     { label: 'Open LinkedIn', icon: 'fa-brands fa-linkedin-in', action: () => window.open('https://www.linkedin.com/in/shehabul-islam-sawraz-ba03542ab/', '_blank') },
     { label: 'Send Email', icon: 'fa-paper-plane', action: () => window.location.href = 'mailto:shehabulislamsawraz@gmail.com' },

@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     theme            — Toggle dark/light mode
     contact          — Contact information
 
+  Palette:
+    palette          — Palette usage info
+    palette list     — Show all color palettes
+    palette set <id> — Switch palette (e.g. palette set steel-blue)
+    palette reset    — Reset to default
+
   Fun:
     neofetch         — System info display
     fortune          — Random programming quote
@@ -213,6 +219,20 @@ Just kidding — no sudo needed.
 Type 'ssh hire' to send me an email directly!`,
 
     pwd: () => '/home/visitor/sawraz-portfolio',
+
+    'palette list': () => {
+      const current = document.documentElement.getAttribute('data-palette') || 'ash-crimson';
+      return (window.PALETTES || []).map(p =>
+        `  ${p.id === current ? '▸ ' : '  '}${p.id.padEnd(22)} ${p.name} — ${p.tag}`
+      ).join('\n');
+    },
+
+    palette: () => `Usage:
+  palette list             — Show all available palettes
+  palette set <name>       — Switch to a palette (e.g. palette set steel-blue)
+  palette reset            — Reset to default (Ash & Crimson)
+
+Current: ${document.documentElement.getAttribute('data-palette') || 'ash-crimson'}`,
   };
 
   /* Build terminal DOM */
@@ -278,6 +298,28 @@ Type 'ssh hire' to send me an email directly!`,
     /* echo command */
     if (trimmed.startsWith('echo ')) {
       print(cmd.trim().substring(5));
+      print('', '');
+      return;
+    }
+
+    /* palette set / reset commands */
+    if (trimmed.startsWith('palette set ')) {
+      const name = trimmed.substring(12).trim();
+      const found = (window.PALETTES || []).find(p => p.id === name);
+      if (found) {
+        window.setPalette(found.id);
+        print(`Palette switched to: ${found.name} (${found.tag})`, 'terminal-accent');
+      } else {
+        print(`Unknown palette: ${name}. Use 'palette list' to see options.`, 'terminal-error');
+      }
+      print('', '');
+      return;
+    }
+
+    if (trimmed === 'palette reset') {
+      document.documentElement.removeAttribute('data-palette');
+      localStorage.removeItem('palette');
+      print('Palette reset to default (Ash & Crimson).', 'terminal-accent');
       print('', '');
       return;
     }
