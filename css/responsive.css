@@ -75,6 +75,8 @@
   .section-title { font-size: 1.6rem; }
 
   .modal-content { padding: 28px; }
+
+  .shortcut-hints { display: none; }
 }
 
 @media (max-width: 480px) {

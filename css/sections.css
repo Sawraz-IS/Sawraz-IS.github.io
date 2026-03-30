@@ -143,6 +143,54 @@
   box-shadow: var(--shadow);
 }
 
+/* Shortcut hints at hero bottom */
+.shortcut-hints {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  opacity: 0;
+  animation: hintFadeIn 0.6s ease 3s forwards;
+  z-index: 2;
+}
+
+@keyframes hintFadeIn {
+  to { opacity: 1; }
+}
+
+.shortcut-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.shortcut-hint kbd {
+  padding: 2px 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.shortcut-hint-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+}
+
 /* ---------- ABOUT ---------- */
 .about-grid {
   display: grid;
@@ -328,23 +376,25 @@
 
 .skill-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(99,102,241,0.2);
+  box-shadow: 0 4px 12px rgba(5,150,105,0.2);
 }
 
 /* Skill category color variants */
-.skill-category[data-cat="languages"] .skill-pill { background: rgba(99,102,241,0.12); color: #6366F1; }
-.skill-category[data-cat="frameworks"] .skill-pill { background: rgba(34,211,238,0.12); color: #0891B2; }
-.skill-category[data-cat="databases"] .skill-pill { background: rgba(168,85,247,0.12); color: #9333EA; }
-.skill-category[data-cat="cloud"] .skill-pill { background: rgba(249,115,22,0.12); color: #EA580C; }
-.skill-category[data-cat="security"] .skill-pill { background: rgba(239,68,68,0.12); color: #DC2626; }
-.skill-category[data-cat="design"] .skill-pill { background: rgba(236,72,153,0.12); color: #DB2777; }
+/* Light theme skill colors */
+.skill-category[data-cat="languages"] .skill-pill { background: rgba(5,150,105,0.1); color: #059669; }
+.skill-category[data-cat="frameworks"] .skill-pill { background: rgba(217,119,6,0.1); color: #B45309; }
+.skill-category[data-cat="databases"] .skill-pill { background: rgba(124,58,237,0.1); color: #7C3AED; }
+.skill-category[data-cat="cloud"] .skill-pill { background: rgba(14,116,144,0.1); color: #0E7490; }
+.skill-category[data-cat="security"] .skill-pill { background: rgba(220,38,38,0.1); color: #DC2626; }
+.skill-category[data-cat="design"] .skill-pill { background: rgba(219,39,119,0.1); color: #DB2777; }
 
-[data-theme="dark"] .skill-category[data-cat="languages"] .skill-pill { background: rgba(99,102,241,0.15); color: #818CF8; }
-[data-theme="dark"] .skill-category[data-cat="frameworks"] .skill-pill { background: rgba(34,211,238,0.15); color: #22D3EE; }
-[data-theme="dark"] .skill-category[data-cat="databases"] .skill-pill { background: rgba(168,85,247,0.15); color: #A855F7; }
-[data-theme="dark"] .skill-category[data-cat="cloud"] .skill-pill { background: rgba(249,115,22,0.15); color: #FB923C; }
-[data-theme="dark"] .skill-category[data-cat="security"] .skill-pill { background: rgba(239,68,68,0.15); color: #F87171; }
-[data-theme="dark"] .skill-category[data-cat="design"] .skill-pill { background: rgba(236,72,153,0.15); color: #F472B6; }
+/* Dark theme skill colors */
+[data-theme="dark"] .skill-category[data-cat="languages"] .skill-pill { background: rgba(52,211,153,0.12); color: #34D399; }
+[data-theme="dark"] .skill-category[data-cat="frameworks"] .skill-pill { background: rgba(251,191,36,0.12); color: #FBBF24; }
+[data-theme="dark"] .skill-category[data-cat="databases"] .skill-pill { background: rgba(167,139,250,0.12); color: #A78BFA; }
+[data-theme="dark"] .skill-category[data-cat="cloud"] .skill-pill { background: rgba(34,211,238,0.12); color: #22D3EE; }
+[data-theme="dark"] .skill-category[data-cat="security"] .skill-pill { background: rgba(248,113,113,0.12); color: #F87171; }
+[data-theme="dark"] .skill-category[data-cat="design"] .skill-pill { background: rgba(244,114,182,0.12); color: #F472B6; }
 
 /* ---------- EXPERIENCE (Timeline) ---------- */
 .timeline {
@@ -638,7 +688,7 @@
 
 .btn-paper:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(99,102,241,0.3);
+  box-shadow: 0 4px 15px rgba(5,150,105,0.3);
   color: #FFF;
 }
 
@@ -762,7 +812,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+  box-shadow: 0 0 0 3px rgba(5,150,105,0.1);
 }
 
 .form-group input::placeholder,
@@ -783,7 +833,7 @@
 
 .btn-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99,102,241,0.3);
+  box-shadow: 0 6px 20px rgba(5,150,105,0.3);
 }
 
 .form-success {
