@@ -14,31 +14,6 @@
   padding-top: 70px;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.hero-bg .dot {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--hero-dot);
-}
-
-.hero-bg .dot:nth-child(1) { width: 300px; height: 300px; top: 10%; left: -5%; animation: floatDot 8s ease-in-out infinite; }
-.hero-bg .dot:nth-child(2) { width: 200px; height: 200px; top: 60%; right: -3%; animation: floatDot 10s ease-in-out infinite reverse; }
-.hero-bg .dot:nth-child(3) { width: 150px; height: 150px; bottom: 10%; left: 30%; animation: floatDot 12s ease-in-out infinite; }
-.hero-bg .dot:nth-child(4) { width: 100px; height: 100px; top: 20%; right: 20%; animation: floatDot 9s ease-in-out infinite reverse; }
-.hero-bg .dot:nth-child(5) { width: 250px; height: 250px; top: 40%; left: 50%; animation: floatDot 11s ease-in-out infinite; }
-
-@keyframes floatDot {
-  0%, 100% { transform: translate(0, 0); }
-  33% { transform: translate(20px, -30px); }
-  66% { transform: translate(-15px, 20px); }
-}
-
 .hero-content {
   position: relative;
   z-index: 1;
