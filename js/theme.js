@@ -1,5 +1,8 @@
 /* ============================================
    THEME — Light/Dark toggle + Palette switcher
+   Note: palette + theme init runs in <head> inline
+   script to prevent flash. This file handles the
+   toggle button and exposes palette utilities.
    ============================================ */
 
 /* All available palettes */
@@ -15,20 +18,6 @@ window.PALETTES = [
   { id: 'obsidian-copper',   name: 'Obsidian & Copper',   tag: 'Oxidized metal' },
   { id: 'electric-violet',   name: 'Electric Violet',     tag: 'Neon circuits / Deep ultraviolet' },
 ];
-
-/* Apply saved palette + theme immediately to prevent flash */
-(function init() {
-  const savedPalette = localStorage.getItem('palette');
-  const defaultPalette = window.DEFAULT_PALETTE || 'ash-crimson';
-  document.documentElement.setAttribute('data-palette', savedPalette || defaultPalette);
-
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
-})();
 
 /* Switch palette (used by command palette and terminal) */
 window.setPalette = function(id) {

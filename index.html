@@ -44,6 +44,21 @@
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/palettes.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon — hero photo -->
+  <link rel="icon" href="assets/images/hero-photo.jpg">
+
+  <!-- Palette + theme init in <head> to prevent flash -->
+  <script src="palette-config.js"></script>
+  <script>
+    (function(){
+      var p = localStorage.getItem('palette');
+      document.documentElement.setAttribute('data-palette', p || window.DEFAULT_PALETTE || 'steel-blue');
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      else if (window.matchMedia('(prefers-color-scheme:dark)').matches) document.documentElement.setAttribute('data-theme','dark');
+    })();
+  </script>
 </head>
 <body>
 
@@ -861,7 +876,6 @@
   <canvas id="confetti-canvas"></canvas>
 
   <!-- Modular Scripts -->
-  <script src="palette-config.js"></script>
   <script src="js/loader.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/cursor.js"></script>
