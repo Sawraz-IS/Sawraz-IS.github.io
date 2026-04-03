@@ -168,14 +168,16 @@
 
 /* ---------- NOW STRIP ---------- */
 .now-strip {
-  padding: 20px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--border);
   background: var(--bg-secondary);
+  overflow: hidden;
 }
 
 .now-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -190,6 +192,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .now-label i {
@@ -197,11 +200,18 @@
   animation: pulse-dot 2s ease infinite;
 }
 
-.now-items {
+.now-ticker {
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  max-width: 600px;
+  height: 1.6em;
+}
+
+.now-ticker-inner {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  animation: tickerScroll 12s ease-in-out infinite;
 }
 
 .now-item {
@@ -209,13 +219,25 @@
   color: var(--text-secondary);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   white-space: nowrap;
+  height: 1.6em;
+  line-height: 1.6em;
 }
 
 .now-item i {
   color: var(--text-muted);
   font-size: 0.75rem;
+}
+
+/* 4 items: show each ~3s, cycle through all */
+@keyframes tickerScroll {
+  0%, 20%   { transform: translateY(0); }
+  25%, 45%  { transform: translateY(-25%); }
+  50%, 70%  { transform: translateY(-50%); }
+  75%, 95%  { transform: translateY(-75%); }
+  100%      { transform: translateY(-75%); }
 }
 
 .now-divider {
