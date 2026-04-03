@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
-  document.querySelectorAll('.reveal-diagonal, .reveal-circle, .reveal-slide').forEach(el => {
+  document.querySelectorAll('.reveal-slide-left, .reveal-scale, .reveal-slide-right').forEach(el => {
     revealObserver.observe(el);
   });
 
