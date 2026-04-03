@@ -289,14 +289,25 @@
 }
 
 .about-avatar {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 0 6px var(--accent);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.about-avatar svg {
+.about-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 0 6px var(--accent), 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.about-avatar img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .about-text p {
