@@ -166,6 +166,66 @@
   background: var(--border);
 }
 
+/* ---------- NOW STRIP ---------- */
+.now-strip {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.now-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.now-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.now-label i {
+  font-size: 0.65rem;
+  animation: pulse-dot 2s ease infinite;
+}
+
+.now-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.now-item {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.now-item i {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.now-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
 /* ---------- ABOUT ---------- */
 .about-grid {
   display: grid;
