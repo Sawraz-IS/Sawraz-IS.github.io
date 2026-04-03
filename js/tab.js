@@ -1,13 +1,14 @@
 /* ============================================
    TAB — Dynamic favicon (matches palette accent)
-   and playful title change when tab loses focus
+   and playful title + photo change on tab blur
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
   const originalTitle = document.title;
+  let activeFaviconHref = '';
 
   /* --- Dynamic SVG favicon from accent color --- */
-  function updateFavicon() {
+  function buildAccentFavicon() {
     const accent = getComputedStyle(document.documentElement)
       .getPropertyValue('--accent').trim() || '#9F1239';
 
@@ -17,34 +18,46 @@ document.addEventListener('DOMContentLoaded', () => {
             font-weight="700" font-size="18" fill="#fff">S</text>
     </svg>`;
 
+    return 'data:image/svg+xml,' + encodeURIComponent(svg);
+  }
+
+  function setFavicon(href) {
     let link = document.querySelector('link[rel="icon"]');
     if (!link) {
       link = document.createElement('link');
       link.rel = 'icon';
       document.head.appendChild(link);
     }
-    link.href = 'data:image/svg+xml,' + encodeURIComponent(svg);
+    link.href = href;
   }
 
-  /* Update on load and when palette changes */
-  updateFavicon();
+  function updateActiveFavicon() {
+    activeFaviconHref = buildAccentFavicon();
+    if (!document.hidden) setFavicon(activeFaviconHref);
+  }
+
+  updateActiveFavicon();
 
   const observer = new MutationObserver((mutations) => {
     for (const m of mutations) {
       if (m.attributeName === 'data-palette' || m.attributeName === 'data-theme') {
-        updateFavicon();
+        updateActiveFavicon();
         break;
       }
     }
   });
   observer.observe(document.documentElement, { attributes: true });
 
-  /* --- Tab title change on blur --- */
+  /* --- Tab blur: swap to hero photo + playful title --- */
+  const heroPhotoPath = 'assets/images/hero-photo.jpg';
+
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-      document.title = '\u{1F44B} Come back! — Sawraz';
+      document.title = '\u{1F44B} Come back! \u2014 Sawraz';
+      setFavicon(heroPhotoPath);
     } else {
       document.title = originalTitle;
+      setFavicon(activeFaviconHref);
     }
   });
 });

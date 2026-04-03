@@ -28,7 +28,7 @@
   <meta property="og:title" content="Shehabul Islam Sawraz | Software Engineer &amp; Researcher">
   <meta property="og:description" content="Personal portfolio of Shehabul Islam Sawraz — Software Engineer at Iron Software, CSE Graduate from BUET, security researcher and aspiring PhD candidate.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://sawraz-is.github.io/og-image.png">
+  <meta property="og:image" content="https://sawraz-is.github.io/assets/images/hero-photo.jpg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,24 +101,92 @@
   <section class="hero" id="hero">
     <!-- Reactive particle canvas injected by js/particles.js -->
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-status">
-          <span class="status-dot"></span>
-          Currently at Iron Software
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            Currently at Iron Software
+          </div>
+          <h1>Hi, I'm <span class="name-highlight">Shehabul Islam Sawraz</span></h1>
+          <div class="typewriter-wrapper">
+            <span id="typewriter" class="typewriter-text"></span>
+          </div>
+          <p class="hero-tagline">CSE Graduate from BUET &middot; Performant Systems &middot; Security Research &middot; Open to Opportunities</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View My Work</a>
+            <a href="#" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Download CV</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/Shehabul-Islam-Sawraz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/shehabul-islam-sawraz-ba03542ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:shehabulislamsawraz@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
         </div>
-        <h1>Hi, I'm <span class="name-highlight">Shehabul Islam Sawraz</span></h1>
-        <div class="typewriter-wrapper">
-          <span id="typewriter" class="typewriter-text"></span>
-        </div>
-        <p class="hero-tagline">CSE Graduate from BUET &middot; Performant Systems &middot; Security Research &middot; Open to Opportunities</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View My Work</a>
-          <a href="#" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Download CV</a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://github.com/Shehabul-Islam-Sawraz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/shehabul-islam-sawraz-ba03542ab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:shehabulislamsawraz@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <!-- Developer at desk illustration -->
+        <div class="hero-illustration" aria-hidden="true">
+          <svg viewBox="0 0 500 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Desk -->
+            <rect x="80" y="310" width="340" height="12" rx="4" fill="var(--border)"/>
+            <!-- Desk legs -->
+            <rect x="110" y="322" width="8" height="70" rx="2" fill="var(--border)"/>
+            <rect x="382" y="322" width="8" height="70" rx="2" fill="var(--border)"/>
+            <!-- Monitor stand -->
+            <rect x="230" y="290" width="40" height="20" rx="2" fill="var(--text-muted)"/>
+            <rect x="215" y="305" width="70" height="6" rx="3" fill="var(--text-muted)"/>
+            <!-- Monitor -->
+            <rect x="145" y="155" width="210" height="140" rx="10" fill="var(--bg-card)" stroke="var(--border)" stroke-width="3"/>
+            <!-- Screen content — code lines -->
+            <rect x="165" y="178" width="80" height="4" rx="2" fill="var(--accent)" opacity="0.7"/>
+            <rect x="165" y="192" width="120" height="4" rx="2" fill="var(--text-muted)" opacity="0.4"/>
+            <rect x="175" y="206" width="100" height="4" rx="2" fill="var(--accent)" opacity="0.4"/>
+            <rect x="175" y="220" width="60" height="4" rx="2" fill="var(--text-muted)" opacity="0.3"/>
+            <rect x="165" y="234" width="90" height="4" rx="2" fill="var(--accent)" opacity="0.5"/>
+            <rect x="175" y="248" width="130" height="4" rx="2" fill="var(--text-muted)" opacity="0.3"/>
+            <rect x="165" y="262" width="50" height="4" rx="2" fill="var(--accent)" opacity="0.6"/>
+            <!-- Screen glow -->
+            <rect x="148" y="158" width="204" height="134" rx="8" fill="var(--accent)" opacity="0.03"/>
+            <!-- Laptop (secondary) -->
+            <rect x="335" y="260" width="90" height="55" rx="5" fill="var(--bg-card)" stroke="var(--border)" stroke-width="2"/>
+            <rect x="345" y="270" width="40" height="3" rx="1.5" fill="var(--accent)" opacity="0.5"/>
+            <rect x="345" y="279" width="55" height="3" rx="1.5" fill="var(--text-muted)" opacity="0.3"/>
+            <rect x="345" y="288" width="35" height="3" rx="1.5" fill="var(--accent)" opacity="0.3"/>
+            <rect x="330" y="315" width="100" height="4" rx="2" fill="var(--border)"/>
+            <!-- Coffee mug -->
+            <rect x="90" y="280" width="28" height="30" rx="4" fill="var(--bg-card)" stroke="var(--border)" stroke-width="2"/>
+            <path d="M118 290 C130 290 130 305 118 305" stroke="var(--border)" stroke-width="2" fill="none"/>
+            <!-- Steam -->
+            <path d="M100 275 Q103 265 100 255" stroke="var(--text-muted)" stroke-width="1.5" fill="none" opacity="0.3">
+              <animate attributeName="d" values="M100 275 Q103 265 100 255;M100 275 Q97 265 100 255;M100 275 Q103 265 100 255" dur="3s" repeatCount="indefinite"/>
+            </path>
+            <path d="M108 275 Q111 262 108 250" stroke="var(--text-muted)" stroke-width="1.5" fill="none" opacity="0.2">
+              <animate attributeName="d" values="M108 275 Q111 262 108 250;M108 275 Q105 262 108 250;M108 275 Q111 262 108 250" dur="3.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Person — head -->
+            <circle cx="250" cy="95" r="32" fill="var(--text-muted)" opacity="0.15"/>
+            <circle cx="250" cy="95" r="30" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="2" opacity="0.8"/>
+            <!-- Hair -->
+            <path d="M222 85 Q225 60 250 58 Q275 60 278 85" fill="var(--text-primary)" opacity="0.2" stroke="var(--text-primary)" stroke-width="1" stroke-opacity="0.1"/>
+            <!-- Glasses -->
+            <circle cx="240" cy="93" r="8" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="260" cy="93" r="8" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+            <line x1="248" y1="93" x2="252" y2="93" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+            <!-- Body -->
+            <path d="M225 125 Q250 135 275 125 L280 200 Q250 210 220 200 Z" fill="var(--accent)" opacity="0.12" stroke="var(--accent)" stroke-width="1.5" stroke-opacity="0.3"/>
+            <!-- Arms reaching to keyboard -->
+            <path d="M220 160 Q190 200 200 280 Q205 300 210 310" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.25"/>
+            <path d="M280 160 Q310 200 300 280 Q295 300 290 310" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.25"/>
+            <!-- Keyboard -->
+            <rect x="195" y="315" width="110" height="6" rx="3" fill="var(--text-muted)" opacity="0.3"/>
+            <!-- Floating code symbols -->
+            <text x="60" y="200" font-family="monospace" font-size="14" fill="var(--accent)" opacity="0.15">&lt;/&gt;</text>
+            <text x="420" y="180" font-family="monospace" font-size="12" fill="var(--accent)" opacity="0.12">{ }</text>
+            <text x="440" y="230" font-family="monospace" font-size="11" fill="var(--accent)" opacity="0.1">01</text>
+            <text x="55" y="260" font-family="monospace" font-size="10" fill="var(--accent)" opacity="0.1">fn()</text>
+            <!-- Accent dots -->
+            <circle cx="70" cy="150" r="3" fill="var(--accent)" opacity="0.1"/>
+            <circle cx="440" cy="280" r="4" fill="var(--accent)" opacity="0.08"/>
+            <circle cx="460" cy="150" r="2.5" fill="var(--accent)" opacity="0.12"/>
+          </svg>
         </div>
       </div>
     </div>
@@ -170,7 +238,9 @@
         <h2 class="section-title">About Me</h2>
       </div>
       <div class="about-grid fade-up">
-        <div class="about-avatar">SIS</div>
+        <div class="about-avatar">
+          <img src="assets/images/about-photo.jpg" alt="Shehabul Islam Sawraz" loading="lazy">
+        </div>
         <div class="about-text">
           <p>I'm a Computer Science and Engineering graduate from Bangladesh University of Engineering and Technology (BUET), currently working as a Software Engineer at Iron Software. My interests span systems programming, software security, reverse engineering, cryptography, and full-stack web development. I'm passionate about writing high-performance, reliable software and am actively pursuing research opportunities for graduate studies.</p>
           <div class="about-chip">&#127891; PhD Applicant in Systems Security &amp; Energy-Efficient Computing &mdash; Fall 2026</div>
@@ -213,7 +283,6 @@
           <p class="edu-degree">B.Sc in Computer Science and Engineering</p>
           <span class="edu-grade">CGPA: 3.68 / 4.00</span>
           <p class="edu-coursework"><strong>Relevant Coursework:</strong> Object-Oriented Programming, Data Structures &amp; Algorithms, Embedded Systems, Discrete Math, Linear Algebra, Calculus, Physics, Probability &amp; Statistics</p>
-          <span class="edu-achievement"><i class="fa-solid fa-award"></i> Dean's Honor List (3x)</span>
         </div>
         <div class="edu-card fade-up">
           <div class="edu-card-header">
