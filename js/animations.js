@@ -17,6 +17,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
+  /* --- Clip-path section reveals (varied entrances) --- */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal-diagonal, .reveal-circle, .reveal-slide').forEach(el => {
+    revealObserver.observe(el);
+  });
+
   /* --- Skill pills staggered pop-in --- */
   const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
