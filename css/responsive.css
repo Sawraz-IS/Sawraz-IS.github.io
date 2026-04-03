@@ -59,10 +59,9 @@
   .hero h1 { font-size: 2.2rem; }
   .typewriter-wrapper { font-size: 1.1rem; }
 
-  .now-content { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .now-items { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .now-divider { display: none; }
-  .now-item { white-space: normal; }
+  .now-content { flex-direction: column; gap: 8px; }
+  .now-ticker { max-width: 100%; }
+  .now-item { white-space: normal; justify-content: flex-start; font-size: 0.8rem; }
 
   .about-grid {
     grid-template-columns: 1fr;

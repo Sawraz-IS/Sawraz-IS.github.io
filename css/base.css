@@ -168,7 +168,7 @@ ul { list-style: none; }
   transition: clip-path 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .reveal-circle.revealed {
-  clip-path: circle(75% at 50% 50%);
+  clip-path: circle(100% at 50% 50%);
 }
 
 .reveal-slide {

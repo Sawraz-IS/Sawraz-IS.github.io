@@ -22,9 +22,9 @@
     let mouseX = -1000, mouseY = -1000;
     let animId;
 
-    const PARTICLE_COUNT = 45;
-    const CONNECT_DIST = 120;
-    const MOUSE_RADIUS = 150;
+    const PARTICLE_COUNT = 90;
+    const CONNECT_DIST = 140;
+    const MOUSE_RADIUS = 180;
     const particles = [];
 
     function resize() {
@@ -39,9 +39,9 @@
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          r: Math.random() * 2 + 1,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          r: Math.random() * 2.5 + 1.2,
         });
       }
     }
@@ -92,7 +92,7 @@
         /* Draw particle */
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${accent.r},${accent.g},${accent.b},0.15)`;
+        ctx.fillStyle = `rgba(${accent.r},${accent.g},${accent.b},0.3)`;
         ctx.fill();
       });
 
@@ -103,12 +103,12 @@
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < CONNECT_DIST) {
-            const alpha = (1 - dist / CONNECT_DIST) * 0.08;
+            const alpha = (1 - dist / CONNECT_DIST) * 0.15;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = `rgba(${accent.r},${accent.g},${accent.b},${alpha})`;
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
