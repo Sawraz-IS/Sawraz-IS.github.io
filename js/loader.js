@@ -1,6 +1,6 @@
 /* ============================================
-   LOADER — Terminal-style boot sequence
-   Plays once per session (gated by sessionStorage)
+   LOADER — Compact terminal boot (< 2.5s)
+   Plays once per session (sessionStorage gate)
    ============================================ */
 
 (function () {
@@ -29,18 +29,15 @@
   const fill = overlay.querySelector('.loader-fill');
   const hint = overlay.querySelector('.loader-hint');
 
+  /* 3 lines only — fast and purposeful */
   const bootLines = [
-    { text: '> initializing portfolio.sys...', delay: 0 },
-    { text: '> loading modules: [security, systems, web]', delay: 300 },
-    { text: '> verifying credentials... ✓ BUET CSE', delay: 600 },
-    { text: '> connecting: iron-software.service... ✓', delay: 900 },
-    { text: '> compiling experience: 3+ years... done', delay: 1200 },
-    { text: '> identity resolved:', delay: 1500 },
+    { text: '> init sawraz.dev ...', delay: 0 },
+    { text: '> credentials verified ✓', delay: 400 },
+    { text: '> identity resolved:', delay: 800 },
   ];
 
   let aborted = false;
 
-  /* Type boot lines */
   bootLines.forEach(({ text, delay }) => {
     setTimeout(() => {
       if (aborted) return;
@@ -62,19 +59,15 @@
     }
     nameEl.textContent += name[charIdx];
     charIdx++;
-    setTimeout(typeName, 60);
+    setTimeout(typeName, 45);
   }
 
-  setTimeout(() => {
-    if (!aborted) typeName();
-  }, 1800);
+  setTimeout(() => { if (!aborted) typeName(); }, 1000);
 
   function afterName() {
     cursorEl.classList.add('blink');
     fill.style.width = '100%';
-    setTimeout(() => {
-      if (!aborted) reveal();
-    }, 800);
+    setTimeout(() => { if (!aborted) reveal(); }, 500);
   }
 
   function reveal() {
@@ -83,7 +76,6 @@
     setTimeout(() => overlay.remove(), 700);
   }
 
-  /* Skip on any key or click */
   function skip() {
     if (aborted) return;
     aborted = true;
@@ -93,8 +85,6 @@
   document.addEventListener('keydown', skip, { once: true });
   overlay.addEventListener('click', skip, { once: true });
 
-  /* Show skip hint after 1s */
-  setTimeout(() => {
-    if (!aborted) hint.classList.add('show');
-  }, 1000);
+  /* Skip hint visible immediately */
+  hint.classList.add('show');
 })();
