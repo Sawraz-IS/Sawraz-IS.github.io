@@ -1,6 +1,6 @@
 /* ============================================
    PARTICLES — Full-page section-aware canvas
-   Different visual per active section.
+   with smooth crossfade between visual modes.
    Disabled on touch/mobile.
    ============================================ */
 
@@ -17,19 +17,21 @@
     const ctx = canvas.getContext('2d');
     let W, H;
     let mouseX = -1000, mouseY = -1000;
-    let currentSection = 'hero';
     let animId;
+
+    /* --- Section tracking with crossfade --- */
+    let currentSection = 'hero';
+    let prevSection = 'hero';
+    let blendProgress = 1; /* 0 = showing prev, 1 = showing current */
+    const BLEND_SPEED = 0.025; /* ~0.8s at 60fps */
 
     /* --- Particles --- */
     const PARTICLE_COUNT = 80;
     const particles = [];
 
-    /* --- Grid nodes (for projects) --- */
+    /* --- Grid config --- */
     const GRID_COLS = 12;
     const GRID_ROWS = 8;
-
-    /* --- Flowing lines (for experience) --- */
-    const WAVE_COUNT = 5;
 
     function resize() {
       W = canvas.width = window.innerWidth;
@@ -63,7 +65,6 @@
     /* --- Section detection --- */
     const sectionIds = ['hero', 'about', 'education', 'skills', 'experience', 'projects', 'research', 'achievements', 'contact'];
     const sectionEls = {};
-
     sectionIds.forEach(id => {
       const el = document.getElementById(id);
       if (el) sectionEls[id] = el;
@@ -71,24 +72,51 @@
 
     function detectSection() {
       const scrollY = window.scrollY + H / 3;
+      let detected = 'hero';
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const el = sectionEls[sectionIds[i]];
         if (el && el.offsetTop <= scrollY) {
-          currentSection = sectionIds[i];
-          return;
+          detected = sectionIds[i];
+          break;
         }
       }
-      currentSection = 'hero';
+      if (detected !== currentSection) {
+        prevSection = currentSection;
+        currentSection = detected;
+        blendProgress = 0;
+      }
     }
 
     window.addEventListener('scroll', detectSection, { passive: true });
 
-    /* --- Drawing modes --- */
+    /* --- Map section to visual mode --- */
+    function getMode(section) {
+      switch (section) {
+        case 'hero':
+        case 'about':
+          return 'particles';
+        case 'skills':
+          return 'grid';
+        case 'experience':
+          return 'constellation';
+        case 'projects':
+          return 'particles-dense';
+        case 'research':
+          return 'grid-orbs';
+        case 'education':
+        case 'achievements':
+          return 'orbs';
+        case 'contact':
+          return 'orbs-particles';
+        default:
+          return 'particles';
+      }
+    }
 
-    function drawParticleNet(accent, opacityMul) {
-      const CONNECT = 130;
+    /* ============ Drawing functions ============ */
+
+    function updateParticles() {
       const MOUSE_R = 180;
-
       particles.forEach(p => {
         const dx = p.x - mouseX;
         const dy = p.y - mouseY;
@@ -102,24 +130,27 @@
         p.vy *= 0.98;
         p.x += p.vx;
         p.y += p.vy;
-        if (p.x < 0) p.x = W;
-        if (p.x > W) p.x = 0;
-        if (p.y < 0) p.y = H;
-        if (p.y > H) p.y = 0;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      });
+    }
 
+    function drawParticleNet(accent, alpha) {
+      if (alpha < 0.01) return;
+      const CONNECT = 130;
+      particles.forEach(p => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${accent.r},${accent.g},${accent.b},${0.25 * opacityMul})`;
+        ctx.fillStyle = `rgba(${accent.r},${accent.g},${accent.b},${0.25 * alpha})`;
         ctx.fill();
       });
-
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < CONNECT) {
-            const a = (1 - d / CONNECT) * 0.12 * opacityMul;
+            const a = (1 - d / CONNECT) * 0.12 * alpha;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -131,24 +162,50 @@
       }
     }
 
-    function drawFlowingWaves(accent, time) {
-      for (let w = 0; w < WAVE_COUNT; w++) {
+    function drawConstellation(accent, alpha, time) {
+      /* Sparse particles with long connecting lines — circuit/schematic feel */
+      if (alpha < 0.01) return;
+      const CONNECT = 220;
+      const count = 25;
+      for (let i = 0; i < count; i++) {
+        const p = particles[i];
         ctx.beginPath();
-        const yBase = H * 0.2 + (H * 0.6 / WAVE_COUNT) * w;
-        for (let x = 0; x <= W; x += 4) {
-          const y = yBase +
-            Math.sin((x * 0.003) + time * 0.001 + w * 1.2) * 30 +
-            Math.sin((x * 0.007) + time * 0.0015 + w * 0.8) * 15;
-          if (x === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.strokeStyle = `rgba(${accent.r},${accent.g},${accent.b},${0.06 + w * 0.01})`;
-        ctx.lineWidth = 1.5;
+        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${accent.r},${accent.g},${accent.b},${0.35 * alpha})`;
+        ctx.fill();
+
+        /* Pulsing outer ring */
+        const pulse = 1 + Math.sin(time * 0.003 + i) * 0.3;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 5 * pulse, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${accent.r},${accent.g},${accent.b},${0.08 * alpha})`;
+        ctx.lineWidth = 1;
         ctx.stroke();
+      }
+
+      /* Long connecting lines — circuit traces */
+      for (let i = 0; i < count; i++) {
+        for (let j = i + 1; j < count; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < CONNECT) {
+            const a = (1 - d / CONNECT) * 0.1 * alpha;
+            ctx.beginPath();
+            ctx.setLineDash([4, 6]);
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(${accent.r},${accent.g},${accent.b},${a})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+            ctx.setLineDash([]);
+          }
+        }
       }
     }
 
-    function drawDotGrid(accent, time) {
+    function drawDotGrid(accent, alpha, time) {
+      if (alpha < 0.01) return;
       const spacingX = W / GRID_COLS;
       const spacingY = H / GRID_ROWS;
 
@@ -156,36 +213,31 @@
         for (let row = 0; row <= GRID_ROWS; row++) {
           let x = col * spacingX;
           let y = row * spacingY;
-
-          /* Gentle drift */
           x += Math.sin(time * 0.001 + col * 0.5 + row * 0.3) * 4;
           y += Math.cos(time * 0.0012 + row * 0.5 + col * 0.3) * 4;
 
-          /* Mouse proximity glow */
           const dx = x - mouseX;
           const dy = y - mouseY;
           const dist = Math.sqrt(dx * dx + dy * dy);
           const glow = dist < 200 ? (1 - dist / 200) * 0.4 : 0;
 
-          const baseAlpha = 0.08 + glow;
-          const radius = 2 + glow * 4;
-
           ctx.beginPath();
-          ctx.arc(x, y, radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${accent.r},${accent.g},${accent.b},${baseAlpha})`;
+          ctx.arc(x, y, 2 + glow * 4, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${accent.r},${accent.g},${accent.b},${(0.08 + glow) * alpha})`;
           ctx.fill();
         }
       }
     }
 
-    function drawFloatingOrbs(accent, time) {
+    function drawFloatingOrbs(accent, alpha, time) {
+      if (alpha < 0.01) return;
       for (let i = 0; i < 6; i++) {
         const x = W * (0.1 + 0.15 * i) + Math.sin(time * 0.0005 + i * 2) * 80;
         const y = H * 0.5 + Math.cos(time * 0.0007 + i * 1.5) * (H * 0.3);
         const r = 40 + Math.sin(time * 0.001 + i) * 15;
 
         const gradient = ctx.createRadialGradient(x, y, 0, x, y, r);
-        gradient.addColorStop(0, `rgba(${accent.r},${accent.g},${accent.b},0.06)`);
+        gradient.addColorStop(0, `rgba(${accent.r},${accent.g},${accent.b},${0.06 * alpha})`);
         gradient.addColorStop(1, `rgba(${accent.r},${accent.g},${accent.b},0)`);
 
         ctx.beginPath();
@@ -195,53 +247,57 @@
       }
     }
 
+    /* --- Render a mode at given alpha --- */
+    function renderMode(mode, accent, alpha, time) {
+      switch (mode) {
+        case 'particles':
+          drawParticleNet(accent, alpha);
+          break;
+        case 'particles-dense':
+          drawParticleNet(accent, alpha * 1.2);
+          break;
+        case 'grid':
+          drawDotGrid(accent, alpha, time);
+          break;
+        case 'constellation':
+          drawConstellation(accent, alpha, time);
+          break;
+        case 'grid-orbs':
+          drawDotGrid(accent, alpha * 0.7, time);
+          drawFloatingOrbs(accent, alpha * 0.5, time);
+          break;
+        case 'orbs':
+          drawFloatingOrbs(accent, alpha, time);
+          break;
+        case 'orbs-particles':
+          drawFloatingOrbs(accent, alpha, time);
+          drawParticleNet(accent, alpha * 0.3);
+          break;
+      }
+    }
+
     /* --- Main loop --- */
     function animate(time) {
       ctx.clearRect(0, 0, W, H);
       const accent = getAccent();
 
-      switch (currentSection) {
-        case 'hero':
-        case 'about':
-          /* Connected particle network — alive, organic */
-          drawParticleNet(accent, 1);
-          break;
+      /* Always update particle positions */
+      updateParticles();
 
-        case 'education':
-        case 'achievements':
-          /* Floating orbs — calm, ambient */
-          drawFloatingOrbs(accent, time);
-          break;
+      /* Advance blend */
+      if (blendProgress < 1) {
+        blendProgress = Math.min(1, blendProgress + BLEND_SPEED);
+      }
 
-        case 'skills':
-          /* Dot grid — structured, precise, technical */
-          drawDotGrid(accent, time);
-          break;
+      const curMode = getMode(currentSection);
+      const prevMode = getMode(prevSection);
 
-        case 'experience':
-          /* Flowing waves — timeline, progression */
-          drawFlowingWaves(accent, time);
-          break;
-
-        case 'projects':
-          /* Particle net (denser) — building, connecting */
-          drawParticleNet(accent, 1.2);
-          break;
-
-        case 'research':
-          /* Dot grid (research = structured) + subtle orbs */
-          drawDotGrid(accent, time);
-          drawFloatingOrbs(accent, time);
-          break;
-
-        case 'contact':
-          /* Gentle floating orbs — warm, inviting */
-          drawFloatingOrbs(accent, time);
-          drawParticleNet(accent, 0.4);
-          break;
-
-        default:
-          drawParticleNet(accent, 0.6);
+      if (blendProgress < 1 && prevMode !== curMode) {
+        /* Crossfade: fade out previous, fade in current */
+        renderMode(prevMode, accent, 1 - blendProgress, time);
+        renderMode(curMode, accent, blendProgress, time);
+      } else {
+        renderMode(curMode, accent, 1, time);
       }
 
       animId = requestAnimationFrame(animate);
@@ -263,7 +319,6 @@
       initParticles();
     });
 
-    /* Pause when tab hidden */
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         cancelAnimationFrame(animId);
