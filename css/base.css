@@ -123,6 +123,7 @@ ul { list-style: none; }
 
 .section {
   padding: 100px 0;
+  overflow: hidden;
 }
 
 .section-header {
