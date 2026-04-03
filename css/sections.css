@@ -29,8 +29,9 @@
 }
 
 .hero-illustration {
-  flex-shrink: 0;
+  flex-shrink: 1;
   width: 380px;
+  max-width: 100%;
   opacity: 0;
   animation: heroIllustrationIn 1s ease 0.5s forwards;
 }
@@ -77,6 +78,8 @@
   font-weight: 800;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .hero h1 .name-highlight {
