@@ -82,6 +82,9 @@
 
   .modal-content { padding: 28px; }
 
+  .research-card { flex-direction: column; gap: 16px; }
+  .research-card-icon { width: 44px; height: 44px; font-size: 1rem; }
+
   .shortcut-hints { display: none; }
 }
 

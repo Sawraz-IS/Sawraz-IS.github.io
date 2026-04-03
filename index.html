@@ -44,6 +44,21 @@
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/palettes.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon — hero photo -->
+  <link rel="icon" href="assets/images/hero-photo.jpg">
+
+  <!-- Palette + theme init in <head> to prevent flash -->
+  <script src="palette-config.js"></script>
+  <script>
+    (function(){
+      var p = localStorage.getItem('palette');
+      document.documentElement.setAttribute('data-palette', p || window.DEFAULT_PALETTE || 'steel-blue');
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      else if (window.matchMedia('(prefers-color-scheme:dark)').matches) document.documentElement.setAttribute('data-theme','dark');
+    })();
+  </script>
 </head>
 <body>
 
@@ -715,21 +730,34 @@
       </div>
       <div class="research-cards">
         <div class="research-card fade-up">
-          <span class="research-type">Publication</span>
-          <h3>Zero-shot Prompting for Code Complexity Prediction Using GitHub Copilot</h3>
-          <p class="research-meta"><i class="fa-solid fa-calendar"></i> 2023 &middot; IEEE/ACM 2nd International Workshop on Natural Language-Based Software Engineering (NLBSE)</p>
-          <p class="research-authors">Joanna Cecilia da Silva Santos, Mohammed Latif Siddiq, Abdus Samee, Sk Ruhul Azgor, Md. Asif Haider, <span class="me">Shehabul Islam Sawraz</span></p>
-          <a href="https://doi.org/10.1109/NLBSE59153.2023.00018" target="_blank" rel="noopener noreferrer" class="btn-paper">View Paper <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="research-card-icon"><i class="fa-solid fa-file-lines"></i></div>
+          <div class="research-card-body">
+            <span class="research-type">Publication</span>
+            <h3>Zero-shot Prompting for Code Complexity Prediction Using GitHub Copilot</h3>
+            <div class="research-detail">
+              <span class="research-detail-item"><i class="fa-solid fa-calendar"></i> 2023</span>
+              <span class="research-detail-item"><i class="fa-solid fa-building-columns"></i> IEEE/ACM NLBSE</span>
+            </div>
+            <p class="research-venue">2nd International Workshop on Natural Language-Based Software Engineering</p>
+            <p class="research-authors">Joanna Cecilia da Silva Santos, Mohammed Latif Siddiq, Abdus Samee, Sk Ruhul Azgor, Md. Asif Haider, <span class="me">Shehabul Islam Sawraz</span></p>
+            <a href="https://doi.org/10.1109/NLBSE59153.2023.00018" target="_blank" rel="noopener noreferrer" class="btn-paper"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Paper</a>
+          </div>
         </div>
         <div class="research-card fade-up">
-          <span class="research-type">Undergraduate Thesis</span>
-          <h3>Adaptive Duty Cycling Leveraging Heterogeneous Sleep Modes for Modbus-Based Wired IoT Systems</h3>
-          <p class="research-meta"><i class="fa-solid fa-calendar"></i> 2024 &middot; Supervisor: Dr. A. B. M. Alim Al Islam, Professor, BUET</p>
-          <ul>
-            <li>Formulated an innovative model applying duty cycling &mdash; typically used in wireless sensor networks &mdash; to energy-efficient wired networks in hostile industrial environments</li>
-            <li>Orchestrated a Master-Slave hierarchy with Reinforcement Learning-based adaptive duty cycling to optimize energy consumption and ensure robust performance</li>
-            <li>Conducted extensive testbed experiments demonstrating significant reductions in energy usage and enhanced data communication efficiency under extreme conditions</li>
-          </ul>
+          <div class="research-card-icon"><i class="fa-solid fa-scroll"></i></div>
+          <div class="research-card-body">
+            <span class="research-type">Undergraduate Thesis</span>
+            <h3>Adaptive Duty Cycling Leveraging Heterogeneous Sleep Modes for Modbus-Based Wired IoT Systems</h3>
+            <div class="research-detail">
+              <span class="research-detail-item"><i class="fa-solid fa-calendar"></i> 2024</span>
+              <span class="research-detail-item"><i class="fa-solid fa-user-tie"></i> Dr. A. B. M. Alim Al Islam, Professor, BUET</span>
+            </div>
+            <ul>
+              <li>Formulated an innovative model applying duty cycling &mdash; typically used in wireless sensor networks &mdash; to energy-efficient wired networks in hostile industrial environments</li>
+              <li>Orchestrated a Master-Slave hierarchy with Reinforcement Learning-based adaptive duty cycling to optimize energy consumption and ensure robust performance</li>
+              <li>Conducted extensive testbed experiments demonstrating significant reductions in energy usage and enhanced data communication efficiency under extreme conditions</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -861,7 +889,6 @@
   <canvas id="confetti-canvas"></canvas>
 
   <!-- Modular Scripts -->
-  <script src="palette-config.js"></script>
   <script src="js/loader.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/cursor.js"></script>
