@@ -256,3 +256,31 @@
   --scrollbar-track: #1A1614; --scrollbar-thumb: #2A2420;
   --footer-bg: #0C0907; --modal-overlay: rgba(0,0,0,0.8);
 }
+
+/* ---------- 10. Electric Violet ---------- */
+[data-palette="electric-violet"] {
+  --bg-primary: #FAFAFE; --bg-secondary: #FFFFFF; --bg-card: #FFFFFF;
+  --text-primary: #1A1025; --text-secondary: #4C3D5E; --text-muted: #8B7FA0;
+  --accent: #7C3AED; --accent-light: #8B5CF6; --accent-cyan: #6D28D9;
+  --accent-gradient: linear-gradient(135deg, #7C3AED, #A855F7);
+  --border: #E8E3F0; --shadow: 0 1px 3px rgba(26,16,37,0.06);
+  --shadow-lg: 0 10px 30px rgba(124,58,237,0.1);
+  --navbar-bg: rgba(250,250,254,0.85); --navbar-shadow: 0 1px 3px rgba(26,16,37,0.06);
+  --pill-bg: #F5F3FF; --pill-text: #6D28D9; --input-bg: #F5F3FF;
+  --timeline-line: #DDD6F3; --hero-dot: rgba(124,58,237,0.04);
+  --scrollbar-track: #F5F3FF; --scrollbar-thumb: #DDD6F3;
+  --footer-bg: #F5F3FF; --modal-overlay: rgba(26,16,37,0.5);
+}
+[data-palette="electric-violet"][data-theme="dark"] {
+  --bg-primary: #0D0717; --bg-secondary: #150E24; --bg-card: #1C1330;
+  --text-primary: #EDE9FE; --text-secondary: #A78BFA; --text-muted: #6D5A8E;
+  --accent: #A855F7; --accent-light: #C084FC; --accent-cyan: #8B5CF6;
+  --accent-gradient: linear-gradient(135deg, #A855F7, #C084FC);
+  --border: #2A1F42; --shadow: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-lg: 0 10px 30px rgba(168,85,247,0.08);
+  --navbar-bg: rgba(13,7,23,0.92); --navbar-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  --pill-bg: rgba(168,85,247,0.12); --pill-text: #C084FC; --input-bg: #1C1330;
+  --timeline-line: #2A1F42; --hero-dot: rgba(168,85,247,0.04);
+  --scrollbar-track: #150E24; --scrollbar-thumb: #2A1F42;
+  --footer-bg: #0A0512; --modal-overlay: rgba(0,0,0,0.85);
+}
