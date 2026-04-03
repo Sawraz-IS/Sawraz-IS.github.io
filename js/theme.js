@@ -13,6 +13,7 @@ window.PALETTES = [
   { id: 'parchment-ochre',   name: 'Parchment & Ochre',   tag: 'Ruled notebook / Amber lamp' },
   { id: 'midnight-phosphor', name: 'Midnight Phosphor',   tag: 'Retro green terminal' },
   { id: 'obsidian-copper',   name: 'Obsidian & Copper',   tag: 'Oxidized metal' },
+  { id: 'electric-violet',   name: 'Electric Violet',     tag: 'Neon circuits / Deep ultraviolet' },
 ];
 
 /* Apply saved palette + theme immediately to prevent flash */

@@ -27,6 +27,7 @@ VALID_PALETTES=(
   "parchment-ochre"
   "midnight-phosphor"
   "obsidian-copper"
+  "electric-violet"
 )
 
 PALETTE_NAMES=(
@@ -39,6 +40,7 @@ PALETTE_NAMES=(
   "Parchment & Ochre    — Ruled notebook / Amber lamp"
   "Midnight Phosphor    — Retro green terminal"
   "Obsidian & Copper    — Oxidized metal"
+  "Electric Violet      — Neon circuits / Deep ultraviolet"
 )
 
 current_palette() {
